@@ -7,7 +7,7 @@ import CityWeek from '../CityWeek/CityWeek'
 function CityView() {
   return (
     <div className='cityView'>
-        <CityHeader />
+        <CityHeader cityTemp={13} cityName={'Trondheim'}/>
         <CityWeek />
     </div>
   )

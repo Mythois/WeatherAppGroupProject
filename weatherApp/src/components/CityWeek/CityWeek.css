@@ -1,0 +1,7 @@
+.cityWeek {
+    background-color: var(--cmpbg);
+    border-radius: 20px;
+    width: 90%;
+    margin-top: 5%;
+    padding: 1rem;
+}

@@ -1,3 +1,18 @@
+/**
+ * File description:
+ * Contains a component (weatherHook) responsible for fetching the data from the open-meto API. 
+ * 
+ * HOW TO GET WEATHER DATA
+ * import weatherHook from './api_hooks/weatherHook';
+ * const data = weatherHook(location); 
+ * 
+ * NOTE:
+ * location is a string of the following format "latitude=63.4305&longitude=10.3951"
+ * You may want to useState on both the location and the weatherHook to update them when changes occur.
+ * 
+ */
+
+
 import { useQuery } from "@tanstack/react-query";
 
 const weatherHook = (location : string) => {
@@ -9,8 +24,8 @@ const weatherHook = (location : string) => {
     const { data } = useQuery({
         queryKey: [location],
         queryFn: async () => {
-            const res = await fetch(url);
-            const data = await res.json();
+            const res = await fetch(url); // The response to our query
+            const data = await res.json(); // The response to our query in json format
             return data;
         }
     });
@@ -19,8 +34,3 @@ const weatherHook = (location : string) => {
 
 export default weatherHook;
 
-// HOW TO GET WEATHER DATA:
-//
-// import weatherHook from './api_hooks/weatherHook';
-//
-// const data = weatherHook(location);

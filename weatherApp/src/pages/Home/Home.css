@@ -1,0 +1,10 @@
+.home {
+    height: 100vh;
+}
+
+.homeSearch {
+    background-color: var(--compBg);
+    padding: 5%;
+    border-radius: 8px;
+    margin: 1rem;
+}

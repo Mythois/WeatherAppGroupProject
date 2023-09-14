@@ -13,8 +13,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --bodybg: #D9D9D9;
-  --cmpbg: #FFFFFF;
+  --pageBg: #D9D9D9;
+  --compBg: #FFFFFF;
   --textColor: black;
 }
 
@@ -70,7 +70,7 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #279690;
+    background-color: #9be9e9;
   }
 }
 

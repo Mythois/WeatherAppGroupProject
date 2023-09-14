@@ -15,7 +15,9 @@
 
   --bodybg: #D9D9D9;
   --cmpbg: #FFFFFF;
+  --textColor: black;
 }
+
 
 a {
   font-weight: 500;

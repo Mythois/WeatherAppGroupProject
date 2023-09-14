@@ -1,16 +1,13 @@
 import React from 'react'
 import './Home.css'
+import Search from '../../components/Search/Search'
+import CityList from '../../components/CityList/CityList'
 
 function Home() {
   return (
     <div className='home'>
-        
-        <div className='homeSearch'>
-            <form>
-                <input type='text' placeholder='Search for a city'/>
-                {/* <button type='submit'>Search</button> */}
-            </form>
-        </div>
+        <Search/>
+        <CityList/>
     </div>
   )
 }

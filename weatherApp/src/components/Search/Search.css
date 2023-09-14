@@ -1,0 +1,11 @@
+.homeSearch {
+    background-color: var(--compBg);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+input {
+    border: none;
+    height: 3rem;
+}

@@ -7,14 +7,8 @@ body{
 
 
 #root {
-    width: 100%;
-    height: 98%;
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    color: white;
+  width: 100vw;
+  height: 100vh;
+  color: var(--textColor);
 }
-
 

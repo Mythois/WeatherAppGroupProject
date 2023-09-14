@@ -6,8 +6,9 @@ import Footer from './components/Footer/Footer'
 
 
 
-import { Navbar } from './components/Navbar'
+import { Navbar } from './components/Navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
+import CityView from './pages/CityView/CityView'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/Favourites"/>
       </Routes>
+      <CityView/>
     </Fragment>
   )
 }

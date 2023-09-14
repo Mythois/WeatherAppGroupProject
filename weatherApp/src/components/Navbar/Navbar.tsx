@@ -1,4 +1,4 @@
-import './styles/Navbar.css'
+import './Navbar.css'
 import { Link } from "react-router-dom"
 import React, {useState} from 'react'
 

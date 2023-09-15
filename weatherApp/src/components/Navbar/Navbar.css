@@ -79,21 +79,32 @@ span{
 }
 
 
-/* hamburger menu turns into cross when opened */
-.close-icon1 {
-    transform: rotate(45deg);
-    margin-top: 13px;
+/* Initial styling for hamburger menu */
+.menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
 }
-.close-icon2 {
-    display: none;
 
+.bar1, .bar2, .bar3 {
+    width: 40px;
+    height: 5px;
+    background-color: #333;
+    margin: 4px 0 0 0;
+    transition: 0.4s;
 }
-.close-icon3 {
-    transform: rotate(-45deg);
-    margin-bottom: 13px;
+
+  /* Styling when menu is open (cross) */
+.menu.open .bar1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
 }
-.close-icon::before, .close-icon::after {
-    transform: rotate(-90deg);
+  
+.menu.open .bar2 {
+    opacity: 0;
+}
+  
+.menu.open .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
 }
 
 

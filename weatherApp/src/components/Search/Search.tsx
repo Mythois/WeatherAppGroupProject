@@ -6,7 +6,7 @@ function Search() {
     <div>
         <div className='homeSearch'>
             <form>
-                <input type='text' placeholder='Search for a city'/>
+                <input type='text' placeholder='Search for a city...'/>
                 {/* <button type='submit'>Search</button> */}
             </form>
         </div>

@@ -67,8 +67,8 @@ a:visited{
     height: 2rem;
 }
 
-nav .menu span{
-    height:0.4rem;
+span{
+    height:0.25rem;
     width: 100%;
     background-color: black;
     border-radius:5px;
@@ -76,6 +76,24 @@ nav .menu span{
 
 .logoContainer{
     color:black;
+}
+
+
+/* hamburger menu turns into cross when opened */
+.close-icon1 {
+    transform: rotate(45deg);
+    margin-top: 13px;
+}
+.close-icon2 {
+    display: none;
+
+}
+.close-icon3 {
+    transform: rotate(-45deg);
+    margin-bottom: 13px;
+}
+.close-icon::before, .close-icon::after {
+    transform: rotate(-90deg);
 }
 
 

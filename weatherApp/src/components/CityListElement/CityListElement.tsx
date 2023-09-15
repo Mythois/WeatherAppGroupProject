@@ -4,13 +4,14 @@ import './CityListElement.css'
 interface CityListElementProps {
   cityName: string
   cityTemp: number
+  cityWeatherIcon: string
 }
 
-function CityListElement({cityName, cityTemp}: CityListElementProps) {
+function CityListElement({cityName, cityTemp, cityWeatherIcon}: CityListElementProps) {
   return (
     <div className='cityListElement'>
         <p>{cityName}</p>
-        <p>☺️</p>
+        <p>{cityWeatherIcon}</p>
         <p>{cityTemp}℃</p>
     </div>
   )

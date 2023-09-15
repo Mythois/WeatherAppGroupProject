@@ -1,9 +1,33 @@
 .cityListElement{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     background-color: var(--compBg);
     margin-bottom: 1rem;
     border-radius: 20px;
-    padding-left: 1rem
+    padding-left: 1rem;
 }
 
+.favorite-checkbox {
+    position: relative;
+    cursor: pointer;
+    margin-top: 0.6rem;
+    width: 1.5rem;
+}
+  
+.hidden-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+  
+.star {
+    font-size: 24px; /* Adjust the size of the star */
+    color: var(--pageBg); /* Adjust the color of the star */
+    background-color: transparent;
+}
+  
+  /* Add styles for the star when it's checked */
+.favorite-checkbox input:checked + .star {
+    color: #ffb429; /* Adjust the color of the checked star */
+}
+  

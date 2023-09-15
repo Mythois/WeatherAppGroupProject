@@ -1,8 +1,8 @@
 import React from 'react'
 
 import './CityView.css'
-import CityHeader from '../CityHeader/CityHeader'
-import CityWeek from '../CityWeek/CityWeek'
+import CityHeader from '../../components/CityHeader/CityHeader'
+import CityWeek from '../../components/CityWeek/CityWeek'
 
 function CityView() {
   return (

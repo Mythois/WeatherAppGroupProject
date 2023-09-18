@@ -6,5 +6,8 @@ input {
     width: 100%;
     border-radius: 20px;
     box-sizing: border-box;
-    margin-bottom: 1rem;
+}
+
+.homeSearch {
+    margin: 1rem 1rem 0 1rem;
 }

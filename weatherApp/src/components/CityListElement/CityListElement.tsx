@@ -5,30 +5,15 @@
 import React, { useState } from 'react';
 import './CityListElement.css';
 
+
 // import weather icons
 import rain from '../../assets/rain.svg';
 import sun from '../../assets/sun.svg';
 import cloud from '../../assets/cloud.svg';
 import sunCloud from '../../assets/sunCloud.svg';
 
-// fetch weather data from API and return the weather icon
-function getWeatherIcon(percipitation: number, cloudCoverage: number) {
-  
-  if (percipitation > 0 && cloudCoverage > 50) {
-    return rain;
-  } 
-  else if (percipitation < 5 && cloudCoverage < 20) {
-    return sun;
-  }
-  else if (percipitation < 5 && cloudCoverage < 50) {
-    return sunCloud;
-  }
-  else {
-    return cloud;
-  }
-}
 
-
+// define the props for the CityListElement component
 interface CityListElementProps {
   cityName: string;  // name of the city
   cityTempMax: number; // max temperature in celsius
@@ -37,6 +22,25 @@ interface CityListElementProps {
   isFavorite: boolean; // whether the city is favorited or not
   cloudCoverage: number; // cloud coverage in percent
 }
+
+
+// fetch weather data from API and return the weather icon
+function getWeatherIcon(percipitation: number, cloudCoverage: number) {
+  
+  if (percipitation > 0 && cloudCoverage > 50) {
+    return rain;
+  } 
+  else if (percipitation < 2 && cloudCoverage < 20) {
+    return sun;
+  }
+  else if (percipitation < 2 && cloudCoverage < 50) {
+    return sunCloud;
+  }
+  else {
+    return cloud;
+  }
+}
+
 
 function CityListElement({
   cityName,
@@ -54,7 +58,7 @@ function CityListElement({
   return (
     <div className='cityListElement'>
       <p>{cityName}</p>
-      <img src={getWeatherIcon(cityPersipitation, cloudCoverage)} alt='weather icon' />
+      <img className='weatherIcon' src={getWeatherIcon(cityPersipitation, cloudCoverage)} alt='weather icon' />
       <p>{cityPersipitation}mm</p>
       <p>{cityTempMax}/{cityTempMin} ℃</p>
       <label className='favorite-checkbox'>

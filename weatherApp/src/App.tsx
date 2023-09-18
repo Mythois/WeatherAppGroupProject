@@ -20,7 +20,7 @@ function App() {
       <Navbar/>
       <Routes>
         {/* just for testing use!! remove after issue is done! */}
-        <Route path="/" element={<CityDetails cityName='' weatherData={null}/>}/>
+        <Route path="/" element={<CityDetails temp={12} name='Trondheim' weatherIcon=''/>}/>
 
         {/* <Route path="/" element={<Home/>}/> */}
         <Route path="/Home" element={<Home/>}/>

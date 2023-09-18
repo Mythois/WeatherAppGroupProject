@@ -5,15 +5,20 @@ import CityWeek from '../../components/CityWeek/CityWeek';
 
 import weatherHook from '../../api_hooks/weatherHook';
 
+interface CityDetailsProps {
+  name: string;
+  temp: number;
+  weatherIcon: string;
+}
 
-function CityDetails() {
+function CityDetails( {name, temp, weatherIcon }: CityDetailsProps) {
   
   const [cityData, setCityData] = useState<any[]>([]); // Initialize with an empty array
   
   
   return (
     <div className='cityDetails'>
-        <CityHeader cityTemp={cityData.temp} cityName={cityData.name} />
+        <CityHeader cityTemp={temp} cityName={name} />
         <CityWeek />
     </div>
   );

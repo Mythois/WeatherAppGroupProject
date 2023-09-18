@@ -22,20 +22,21 @@ function CityList() {
     <div className='cityList'>
 
         {/* hard coded data for testing */}
-        <CityListElement cityName='test' cityTemp={12} cityWeatherIcon='⛈'/>
-        <CityListElement cityName='test' cityTemp={12} cityWeatherIcon='⛈'/>
-        <CityListElement cityName='test' cityTemp={12} cityWeatherIcon='⛈'/>
+        <CityListElement cityName='test' cityTemp={12} cityWeatherIcon='⛈' isFavorite={true}/>
+        <CityListElement cityName='test' cityTemp={12} cityWeatherIcon='⛈' isFavorite={false}/>
+        <CityListElement cityName='test' cityTemp={12} cityWeatherIcon='⛈' isFavorite={false}/>
       
 
         {/* Loop over the cityData array and create a CityListElement for each city */} 
-      {cityData.map((city, index) => (
+      {/* {cityData.map((city, index) => (
         <CityListElement
           key={index} // Make sure to provide a unique key for each element in the list
           cityName={city.name}
           cityTemp={city.temp}
           cityWeatherIcon={city.weatherIcon}
+          isFavorite={city.isFavorite}
         />
-      ))}
+      ))} */}
     </div>
   );
 }

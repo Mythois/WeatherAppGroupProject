@@ -9,17 +9,18 @@ interface CityListElementProps {
   cityName: string;
   cityTemp: number;
   cityWeatherIcon: string;
+  isFavorite: boolean;
 }
 
 function CityListElement({
   cityName,
   cityTemp,
-  cityWeatherIcon,
+  cityWeatherIcon
 }: CityListElementProps) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const toggleFavorite = () => {
-    setIsFavorite(!isFavorite);
+    setIsFavorite(isFavorite => !isFavorite);
   };
 
   return (

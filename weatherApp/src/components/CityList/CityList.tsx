@@ -16,22 +16,45 @@ function CityList({ filter, weatherData }: CityListProps) {
       cities.filter((c) => c.toLowerCase().includes(filter.toLowerCase()))
     );
   }, [filter]);
-  
+
   return (
     <div className='cityList'>
       {suggestions.map((cityName, index) => {
         const cityWeather = weatherData.find((cityData: { city: string; }) => cityData.city === cityName);
-        const cityTemp = cityWeather?.weatherData?.hourly?.temperature_2m[0];  // The temperature is currently the first one in the array, fix this
+
+        // Find the lowest / highest temp
+        let maxTemp = cityWeather?.weatherData?.hourly?.temperature_2m[0];
+        let minTemp = cityWeather?.weatherData?.hourly?.temperature_2m[0];
+        for (let i = 0; i < 24; i++) {
+          if (cityWeather?.weatherData?.hourly?.temperature_2m[i] < minTemp) {
+            minTemp = cityWeather?.weatherData?.hourly?.temperature_2m[i];
+          }
+          if (cityWeather?.weatherData?.hourly?.temperature_2m[i] > maxTemp) {
+            maxTemp = cityWeather?.weatherData?.hourly?.temperature_2m[i];
+          }
+        }
+        const cityTempMax = maxTemp;
+        const cityTempMin = minTemp;
+
+        // Finds the average of rain/clouds
+        let sumOfRain = 0;
+        let sumOfClouds = 0;
+        for (let i = 0; i < 24; i++) {
+          sumOfRain += cityWeather?.weatherData?.hourly?.rain[i];
+          sumOfClouds += cityWeather?.weatherData?.hourly?.cloudcover[i];
+        }
+        const cityPersipitation = parseFloat((sumOfRain/24).toFixed(2));
+        const cloudCoverage = parseFloat((sumOfClouds/24).toFixed(2));
 
         return (
           <CityListElement
             key={index}
             cityName={cityName}
-            cityTempMax={cityTemp} // default
-            cityTempMin={0} // default
-            cityPersipitation={0} // default
-            isFavorite={false} // default
-            cloudCoverage={0} // default
+            cityTempMax={cityTempMax}
+            cityTempMin={cityTempMin}
+            cityPersipitation={cityPersipitation}
+            isFavorite={false}
+            cloudCoverage={cloudCoverage}
           />
         );
       })}

@@ -1,6 +1,5 @@
 import './Search.css';
 import React, { useState, useEffect } from 'react';
-import CityList from '../CityList/CityList';
 
 interface SearchBarProps {
   onFilter: (filter: string) => void;

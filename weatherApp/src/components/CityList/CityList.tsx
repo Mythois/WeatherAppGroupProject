@@ -26,9 +26,12 @@ function CityList({ filter, weatherData }: CityListProps) {
         return (
           <CityListElement
             key={index}
-            cityName={cityName} 
-            cityTemp={cityTemp}
-            cityWeatherIcon={'⛈'} // Example weather icon
+            cityName={cityName}
+            cityTempMax={cityTemp} // default
+            cityTempMin={0} // default
+            cityPersipitation={0} // default
+            isFavorite={false} // default
+            cloudCoverage={0} // default
           />
         );
       })}

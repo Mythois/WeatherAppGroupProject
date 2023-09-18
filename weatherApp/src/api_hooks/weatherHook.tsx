@@ -13,7 +13,7 @@
  */
 
 const fetchWeatherData = async (location: string) => {
-    const url = `https://api.open-meteo.com/v1/forecast?${location}&hourly=temperature_2m`;
+    const url = `https://api.open-meteo.com/v1/forecast?${location}&hourly=temperature_2m,rain,cloudcover`;
   
     try {
       const res = await fetch(url);
@@ -27,8 +27,10 @@ const fetchWeatherData = async (location: string) => {
   
   const weatherHook = async (location: string) => {
     const data = await fetchWeatherData(location);
+    console.log(data);
+    
     return data;    
   };
   
   export default weatherHook;
-  
+

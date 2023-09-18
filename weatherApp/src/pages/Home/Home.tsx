@@ -10,6 +10,7 @@ function Home() {
   const [filter, setFilter] = useState("");
 
 
+  // move this to a hook or something in utils, and use it for cityDetails as well??
   useEffect(() => {
     async function fetchWeatherDataForCities() {
       const cities = Object.keys(cityCoordinates);

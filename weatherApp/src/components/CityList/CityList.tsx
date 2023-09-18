@@ -23,9 +23,9 @@ function CityList() {
     <div className='cityList'>
 
         {/* hard coded data for testing */}
-        <CityListElement cityName='Oslo' cityTempMax={12} cityTempMin={8} cityPersipitation={34} cityWeatherIcon='⛈' isFavorite={false}/>
-        <CityListElement cityName='LA' cityTempMax={20} cityTempMin={17} cityPersipitation={0} cityWeatherIcon='⛈' isFavorite={false}/>
-        <CityListElement cityName='New York' cityTempMax={18} cityTempMin={14} cityPersipitation={14} cityWeatherIcon='⛈' isFavorite={false}/>
+        <CityListElement cityName='Oslo' cityTempMax={12} cityTempMin={8} cityPersipitation={34} isFavorite={false} cloudCoverage={70}/>
+        <CityListElement cityName='LA' cityTempMax={20} cityTempMin={17} cityPersipitation={0} isFavorite={false} cloudCoverage={10}/>
+        <CityListElement cityName='New York' cityTempMax={18} cityTempMin={14} cityPersipitation={0} isFavorite={false} cloudCoverage={70}/>
       
 
         {/* Loop over the cityData array and create a CityListElement for each city */} 

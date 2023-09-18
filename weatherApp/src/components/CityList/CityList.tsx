@@ -29,6 +29,7 @@ function CityList() {
       
 
         {/* Loop over the cityData array and create a CityListElement for each city */} 
+        
       {/* {cityData.map((city, index) => (
         <CityListElement
           key={index} // Make sure to provide a unique key for each element in the list

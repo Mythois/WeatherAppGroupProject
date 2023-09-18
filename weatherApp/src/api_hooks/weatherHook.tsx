@@ -27,8 +27,6 @@ const fetchWeatherData = async (location: string) => {
   
   const weatherHook = async (location: string) => {
     const data = await fetchWeatherData(location);
-    console.log(data);
-    
     return data;    
   };
   

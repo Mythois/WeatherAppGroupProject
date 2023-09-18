@@ -1,8 +1,8 @@
 // import weather icons
-import rain from './assets/rain.svg';
-import sun from './assets/sun.svg';
-import cloud from './assets/cloud.svg';
-import sunCloud from './assets/sunCloud.svg';
+import rain from '../assets/rain.svg';
+import sun from '../assets/sun.svg';
+import cloud from '../assets/cloud.svg';
+import sunCloud from '../assets/sunCloud.svg';
 
 
 

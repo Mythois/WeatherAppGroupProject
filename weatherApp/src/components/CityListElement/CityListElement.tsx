@@ -16,7 +16,8 @@ import sunCloud from '../../assets/sun-cloud.svg';
 
 interface CityListElementProps {
   cityName: string;  // name of the city
-  cityTemp: number; // temperature in celsius
+  cityTempMax: number; // max temperature in celsius
+  cityTempMin: number; // min temperature in celsius
   cityWeatherIcon: string; // path to the weather icon
   cityPersipitation: number; // persipitation in mm
   isFavorite: boolean; // whether the city is favorited or not
@@ -24,7 +25,8 @@ interface CityListElementProps {
 
 function CityListElement({
   cityName,
-  cityTemp,
+  cityTempMin,
+  cityTempMax,
   cityWeatherIcon,
   cityPersipitation
 }: CityListElementProps) {
@@ -39,8 +41,7 @@ function CityListElement({
       <p>{cityName}</p>
       <p>{cityWeatherIcon}</p>
       <p>{cityPersipitation}mm</p>
-      <p>{cityTemp}℃</p>
-
+      <p>{cityTempMax} / {cityTempMin}℃</p>
       <label className='favorite-checkbox'>
         <input
           type='checkbox'

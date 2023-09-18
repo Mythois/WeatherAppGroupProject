@@ -13,12 +13,10 @@ type CityHeaderProps = {
 function CityHeader({cityName, cityTemp, cityPersipitation, cloudCoverage}: CityHeaderProps) {
     return (
         <div className='cityHeader'>
-            <div className='cityTitle'>{cityName}</div>
-            <div className='cityIcon'>
-                <img src={getWeatherIcon(cityPersipitation, cloudCoverage)} alt="icon" /></div>
-            <div className='cityTemp'>
-                <p>{cityTemp}℃</p>
-            </div>
+            <h4>{cityName}</h4>
+            <img src={getWeatherIcon(cityPersipitation, cloudCoverage)} alt="icon" />
+            <p>{cityTemp}℃</p>
+            <p>{cityPersipitation}mm</p>
         </div>
         )
 }

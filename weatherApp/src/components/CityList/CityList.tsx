@@ -18,13 +18,14 @@ function CityList() {
       });
   }, []); // The empty dependency array ensures this effect runs once on component mount
 
+  
   return (
     <div className='cityList'>
 
         {/* hard coded data for testing */}
-        <CityListElement cityName='test' cityTemp={12} cityWeatherIcon='⛈' isFavorite={true}/>
-        <CityListElement cityName='test' cityTemp={12} cityWeatherIcon='⛈' isFavorite={false}/>
-        <CityListElement cityName='test' cityTemp={12} cityWeatherIcon='⛈' isFavorite={false}/>
+        <CityListElement cityName='Oslo' cityTemp={12} cityPersipitation={34} cityWeatherIcon='⛈' isFavorite={false}/>
+        <CityListElement cityName='LA' cityTemp={20} cityPersipitation={0} cityWeatherIcon='⛈' isFavorite={false}/>
+        <CityListElement cityName='New York' cityTemp={18} cityPersipitation={14} cityWeatherIcon='⛈' isFavorite={false}/>
       
 
         {/* Loop over the cityData array and create a CityListElement for each city */} 

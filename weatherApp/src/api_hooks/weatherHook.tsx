@@ -16,8 +16,8 @@
 import { useQuery } from "@tanstack/react-query";
 
 const weatherHook = (location : string) => {
-    location = "https://api.open-meteo.com/v1/forecast?latitude=63.4305&longitude=10.3951&hourly=temperature_2m,rain,cloudcover" // TODO --> This should not be a set variable
-    
+    //location = "https://api.open-meteo.com/v1/forecast?latitude=63.4305&longitude=10.3951&hourly=temperature_2m,rain,cloudcover" // TODO --> This should not be a set variable
+    location = location;
      // This can be changed if we want more weather data
     const url = `https://api.open-meteo.com/v1/forecast?${location}&hourly=temperature_2m,rain,cloudcover`;
 

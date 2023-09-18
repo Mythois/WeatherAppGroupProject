@@ -13,13 +13,15 @@ import sunCloud from '../../assets/sunCloud.svg';
 
 // fetch weather data from API and return the weather icon
 function getWeatherIcon(percipitation: number, cloudCoverage: number) {
+  
   if (percipitation > 0 && cloudCoverage > 50) {
     return rain;
-  } else if (percipitation < 5 && cloudCoverage < 50) {
-    return sunCloud;
-  }
+  } 
   else if (percipitation < 5 && cloudCoverage < 20) {
     return sun;
+  }
+  else if (percipitation < 5 && cloudCoverage < 50) {
+    return sunCloud;
   }
   else {
     return cloud;

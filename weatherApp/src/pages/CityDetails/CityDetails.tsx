@@ -8,20 +8,13 @@ import weatherHook from '../../api_hooks/weatherHook';
 
 function CityDetails() {
   
-  const cityData = weatherHook(location); 
+  const [cityData, setCityData] = useState<any[]>([]); // Initialize with an empty array
   
   
-
   return (
     <div className='cityDetails'>
-      {cityData ? (
-        <>
-          <CityHeader cityTemp={cityData.temp} cityName={cityData.name} />
-          <CityWeek />
-        </>
-      ) : (
-        <p>Loading...</p>
-      )}
+        <CityHeader cityTemp={cityData.temp} cityName={cityData.name} />
+        <CityWeek />
     </div>
   );
 }

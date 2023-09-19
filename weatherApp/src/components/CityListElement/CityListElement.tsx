@@ -5,6 +5,7 @@
 import React, { useState } from 'react';
 import './CityListElement.css';
 import { useCityWeatherData } from '../../coordinates/useCityWeatherData';
+import cityCoordinates from '../../coordinates/cityCoordinates';
 
 
 // import weather icons
@@ -12,6 +13,7 @@ import rain from '../../assets/rain.svg';
 import sun from '../../assets/sun.svg';
 import cloud from '../../assets/cloud.svg';
 import sunCloud from '../../assets/sunCloud.svg';
+import weatherHook from '../../api_hooks/weatherHook';
 
 
 // define the props for the CityListElement component
@@ -39,13 +41,19 @@ function getWeatherIcon(percipitation: number, cloudCoverage: number) {
 
 
 function CityListElement({ cityName }: CityListElementProps) {
-  const cityWeatherData = useCityWeatherData(cityName);
+  const cityWeatherData= weatherHook(cityCoordinates[cityName]);
   const [isFavorite, setIsFavorite] = useState(false);
 
   const toggleFavorite = () => {
     setIsFavorite(isFavorite => !isFavorite);
   };
-  
+
+  if (!cityWeatherData) {
+    // Handle the case where data is still loading or unavailable
+    return <div>Loading weather data...</div>;
+  }
+
+ 
   // Find the lowest / highest temp
   let maxTemp = cityWeatherData?.hourly?.temperature_2m[0];
         let minTemp = cityWeatherData?.hourly?.temperature_2m[0];
@@ -69,6 +77,7 @@ function CityListElement({ cityName }: CityListElementProps) {
         }
         const cityPersipitation = parseFloat((sumOfRain/24).toFixed(2));
         const cloudCoverage = parseFloat((sumOfClouds/24).toFixed(2));
+  
 
 
   return (

@@ -7,6 +7,10 @@ import './CityListElement.css';
 import getWeatherIcon from '../../utils/getWeatherIcon';
 import { Link } from 'react-router-dom';
 
+import weatherHook from '../../api_hooks/weatherHook';
+import cityCoordinates from '../../coordinates/cityCoordinates';
+
+
 
 // define the props for the CityListElement component
 interface CityListElementProps {

@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './CityDetails.css';
 import CityHeader from '../../components/CityHeader/CityHeader';
 import CityWeek from '../../components/CityWeek/CityWeek';
-import useCityWeatherData from '../../coordinates/useCityWeatherData';
+import cityCoordinates from '../../coordinates/cityCoordinates';
 
 import getWeatherIcon from '../../utils/getWeatherIcon';
+import weatherHook from '../../api_hooks/weatherHook';
 
 interface CityDetailsProps {
   cityName: string;
@@ -12,7 +13,7 @@ interface CityDetailsProps {
 
 function CityDetails( { cityName }: CityDetailsProps) {
 
-  const cityWeatherData = useCityWeatherData(cityName);
+  const cityWeatherData= weatherHook(cityCoordinates[cityName]);
 
   // Find the lowest / highest temp
   let maxTemp = cityWeatherData?.hourly?.temperature_2m[0];

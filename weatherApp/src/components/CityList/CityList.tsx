@@ -11,10 +11,10 @@ function CityList({ filter, showFavoritesOnly }: CityListProps) {
   
   // Retrieve favorites from sessionStorage
   const favorites: string[] = [];
-  for (let i = 0; i < sessionStorage.length; i++) {
-    const pre = sessionStorage.key(i);
+  for (let i = 0; i < localStorage.length; i++) {
+    const pre = localStorage.key(i);
     const key = String(pre)
-    const value = sessionStorage.getItem(key);
+    const value = localStorage.getItem(key);
 
     // Check if the value is 'true' (favorite)
     if (value === 'true') {

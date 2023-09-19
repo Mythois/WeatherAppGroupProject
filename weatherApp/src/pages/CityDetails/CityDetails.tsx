@@ -47,8 +47,8 @@ function CityDetails( { cityName }: CityDetailsProps) {
     <div className='cityDetails'>
 
         <CityHeader 
-          cityTempMax={maxTemp} 
-          cityTempMin={minTemp} 
+          cityTempMax={cityTempMax} 
+          cityTempMin={cityTempMin} 
           cityName={cityName} 
           cloudCoverage={cloudCoverage} 
           cityPersipitation={cityPersipitation} />

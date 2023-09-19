@@ -5,6 +5,7 @@
 import React, { useState } from 'react';
 import './CityListElement.css';
 import getWeatherIcon from '../../utils/getWeatherIcon';
+import { Link } from 'react-router-dom';
 
 
 // define the props for the CityListElement component
@@ -34,10 +35,15 @@ function CityListElement({
 
   return (
     <div className='cityListElement'>
-      <p>{cityName}</p>
+
+      <Link className='cityLink' to={`/city/${cityName}`}>
+        <p>{cityName}</p>
+      </Link>
+
       <img className='weatherIcon' src={getWeatherIcon(cityPersipitation, cloudCoverage)} alt='weather icon' />
       <p>{cityPersipitation}mm</p>
       <p>{cityTempMax}/{cityTempMin} ℃</p>
+      
       <label className='favorite-checkbox'>
         <input
           type='checkbox'

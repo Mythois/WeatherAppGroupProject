@@ -17,6 +17,22 @@ function CityWeek() {
       </div>
       <span className='line'></span>
       
+      <div className='day'>
+        <div>Tuesday</div>
+        <div>⛈</div>
+        <div>5mm</div>
+        <div>10℃</div>
+      </div>
+      <span className='line'></span>
+      
+      <div className='day'>
+        <div>Wednesday</div>
+        <div>⛈</div>
+        <div>5mm</div>
+        <div>10℃</div>
+      </div>
+      <span className='line'></span>
+      
       
       
     </div>

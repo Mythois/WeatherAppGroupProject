@@ -11,27 +11,49 @@ import { Link } from 'react-router-dom';
 // define the props for the CityListElement component
 interface CityListElementProps {
   cityName: string;  // name of the city
-  cityTempMax: number; // max temperature in celsius
-  cityTempMin: number; // min temperature in celsius
-  cityPersipitation: number; // persipitation in mm
-  isFavorite: boolean; // whether the city is favorited or not
-  cloudCoverage: number; // cloud coverage in percent
 }
 
 
 
-function CityListElement({
-  cityName,
-  cityTempMin,
-  cityTempMax,
-  cityPersipitation,
-  cloudCoverage
-}: CityListElementProps) {
+function CityListElement({ cityName }: CityListElementProps) {
+  const cityWeatherData= weatherHook(cityCoordinates[cityName]);
   const [isFavorite, setIsFavorite] = useState(false);
 
   const toggleFavorite = () => {
     setIsFavorite(isFavorite => !isFavorite);
   };
+
+  if (!cityWeatherData) {
+    // Handle the case where data is still loading or unavailable
+    return <div>Loading weather data...</div>;
+  }
+
+ 
+  // Find the lowest / highest temp
+  let maxTemp = cityWeatherData?.hourly?.temperature_2m[0];
+        let minTemp = cityWeatherData?.hourly?.temperature_2m[0];
+        for (let i = 0; i < 24; i++) {
+          if (cityWeatherData?.hourly?.temperature_2m[i] < minTemp) {
+            minTemp = cityWeatherData?.hourly?.temperature_2m[i];
+          }
+          if (cityWeatherData?.hourly?.temperature_2m[i] > maxTemp) {
+            maxTemp = cityWeatherData?.hourly?.temperature_2m[i];
+          }
+        }
+        const cityTempMax = maxTemp;
+        const cityTempMin = minTemp;
+
+        // Finds the average of rain/clouds
+        let sumOfRain = 0;
+        let sumOfClouds = 0;
+        for (let i = 0; i < 24; i++) {
+          sumOfRain += cityWeatherData?.hourly?.rain[i];
+          sumOfClouds += cityWeatherData?.hourly?.cloudcover[i];
+        }
+        const cityPersipitation = parseFloat((sumOfRain/24).toFixed(2));
+        const cloudCoverage = parseFloat((sumOfClouds/24).toFixed(2));
+  
+
 
   return (
     <div className='cityListElement'>

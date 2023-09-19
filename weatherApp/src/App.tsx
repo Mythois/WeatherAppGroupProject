@@ -21,7 +21,7 @@ function App() {
       <Navbar/>
       <Routes>
         {/* just for testing use!! remove after issue is done! */}
-        <Route path="/" element={<CityDetails cityName='Trondheim'/>}/>
+        <Route path="/" element={<CityDetails cityName='Oslo'/>}/>
 
         {/* <Route path="/" element={<Home/>}/> */}
         <Route path="/Home" element={<Home/>}/>

@@ -4,6 +4,8 @@ import CityHeader from '../../components/CityHeader/CityHeader';
 import CityWeek from '../../components/CityWeek/CityWeek';
 import useCityWeatherData from '../../coordinates/useCityWeatherData';
 
+import getWeatherIcon from '../../utils/getWeatherIcon';
+
 interface CityDetailsProps {
   cityName: string;
 }
@@ -38,7 +40,7 @@ function CityDetails( { cityName }: CityDetailsProps) {
 
   const cityPersipitation = parseFloat((sumOfRain/24).toFixed(2));
   const cloudCoverage = parseFloat((sumOfClouds/24).toFixed(2));
-
+  
   
   return (
     <div className='cityDetails'>

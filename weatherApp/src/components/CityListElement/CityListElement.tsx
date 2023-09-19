@@ -4,16 +4,8 @@
 
 import React, { useState } from 'react';
 import './CityListElement.css';
-import { useCityWeatherData } from '../../coordinates/useCityWeatherData';
-import cityCoordinates from '../../coordinates/cityCoordinates';
-
-
-// import weather icons
-import rain from '../../assets/rain.svg';
-import sun from '../../assets/sun.svg';
-import cloud from '../../assets/cloud.svg';
-import sunCloud from '../../assets/sunCloud.svg';
-import weatherHook from '../../api_hooks/weatherHook';
+import getWeatherIcon from '../../utils/getWeatherIcon';
+import { Link } from 'react-router-dom';
 
 
 // define the props for the CityListElement component
@@ -21,23 +13,6 @@ interface CityListElementProps {
   cityName: string;  // name of the city
 }
 
-
-// fetch weather data from API and return the weather icon
-function getWeatherIcon(percipitation: number, cloudCoverage: number) {
-  
-  if (percipitation > 0 && cloudCoverage > 50) {
-    return rain;
-  } 
-  else if (percipitation < 2 && cloudCoverage < 20) {
-    return sun;
-  }
-  else if (percipitation < 2 && cloudCoverage < 50) {
-    return sunCloud;
-  }
-  else {
-    return cloud;
-  }
-}
 
 
 function CityListElement({ cityName }: CityListElementProps) {
@@ -82,10 +57,15 @@ function CityListElement({ cityName }: CityListElementProps) {
 
   return (
     <div className='cityListElement'>
-      <p>{cityName}</p>
+
+      <Link className='cityLink' to={`/city/${cityName}`}>
+        <p>{cityName}</p>
+      </Link>
+
       <img className='weatherIcon' src={getWeatherIcon(cityPersipitation, cloudCoverage)} alt='weather icon' />
       <p>{cityPersipitation}mm</p>
       <p>{cityTempMax}/{cityTempMin} ℃</p>
+      
       <label className='favorite-checkbox'>
         <input
           type='checkbox'

@@ -18,13 +18,16 @@ interface CityListElementProps {
 }
 
 
-
 function CityListElement({ cityName }: CityListElementProps) {
   const cityWeatherData= weatherHook(cityCoordinates[cityName]);
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState((sessionStorage.getItem(cityName) === 'true'));
 
   const toggleFavorite = () => {
-    setIsFavorite(isFavorite => !isFavorite);
+    setIsFavorite((prevIsFavorite) => {
+      const newIsFavorite = !prevIsFavorite;
+      sessionStorage.setItem(cityName, String(newIsFavorite));
+      return newIsFavorite;
+    });
   };
 
   if (!cityWeatherData) {

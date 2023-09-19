@@ -1,15 +1,15 @@
-import React from 'react'
-import './Favorites.css'
-import CityList from '../../components/CityList/CityList'
-
-// TODO: map over the favorites array from database and create a CityListElement for each city
+import { useState } from 'react';
+import './Favorites.css';
+import CityList from '../../components/CityList/CityList';
 
 function Favorites() {
+  const [filter, setFilter] = useState("");
+
   return (
-    <div className='favoritesPage'>
-        
+    <div className='favorite'>
+      <CityList filter={filter} showFavoritesOnly={true} />
     </div>
-  )
+  );
 }
 
-export default Favorites
+export default Favorites;

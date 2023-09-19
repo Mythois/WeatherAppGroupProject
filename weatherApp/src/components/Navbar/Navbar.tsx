@@ -15,7 +15,7 @@ const Navbar = () => {
         <div className="bar2"></div>
         <div className="bar3"></div>
       </div>
-      <div className='logoContainer'><h2>WebDevWeather</h2></div>
+      <div className='logoContainer'><h2><a className="logoContainer" href="/">WebDevWeather</a></h2></div>
       <ul className={menuOpen ? "open" : ""}>
         <li className="navigationElement"><a href="/Home">Home</a></li>
         <li className="navigationElement"><a href="/Favourites">Favourites</a></li>

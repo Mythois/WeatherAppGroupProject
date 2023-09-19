@@ -9,7 +9,7 @@ function Home() {
   return (
     <div className='home'>
       <Search onFilter={(value) => setFilter(value)} />
-      <CityList filter={filter} />
+      <CityList filter={filter} showFavoritesOnly={false} />
     </div>
   );
 }

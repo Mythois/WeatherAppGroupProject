@@ -78,6 +78,10 @@ span{
     color:black;
 }
 
+.logoContainer:hover{
+    color: black;
+}
+
 
 /* Initial styling for hamburger menu */
 .menu {

@@ -20,12 +20,12 @@ interface CityListElementProps {
 
 function CityListElement({ cityName }: CityListElementProps) {
   const cityWeatherData= weatherHook(cityCoordinates[cityName]);
-  const [isFavorite, setIsFavorite] = useState((sessionStorage.getItem(cityName) === 'true'));
+  const [isFavorite, setIsFavorite] = useState((localStorage.getItem(cityName) === 'true'));
 
   const toggleFavorite = () => {
     setIsFavorite((prevIsFavorite) => {
       const newIsFavorite = !prevIsFavorite;
-      sessionStorage.setItem(cityName, String(newIsFavorite));
+      localStorage.setItem(cityName, String(newIsFavorite));
       return newIsFavorite;
     });
   };

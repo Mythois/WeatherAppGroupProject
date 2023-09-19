@@ -5,17 +5,18 @@ import getWeatherIcon from '../../utils/getWeatherIcon'
 
 type CityHeaderProps = {
     cityName: string,
-    cityTemp: number;
+    cityTempMax: number;
+    cityTempMin: number;
     cityPersipitation: number;
     cloudCoverage: number;
 }
 
-function CityHeader({cityName, cityTemp, cityPersipitation, cloudCoverage}: CityHeaderProps) {
+function CityHeader({cityName, cityTempMax, cityTempMin, cityPersipitation, cloudCoverage}: CityHeaderProps) {
     return (
         <div className='cityHeader'>
             <h4>{cityName}</h4>
             <img src={getWeatherIcon(cityPersipitation, cloudCoverage)} alt="icon" />
-            <p>{cityTemp}℃</p>
+            <p>{cityTempMax} / {cityTempMin}℃</p>
             <p>{cityPersipitation}mm</p>
         </div>
         )

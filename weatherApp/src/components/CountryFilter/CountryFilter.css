@@ -1,0 +1,26 @@
+.countryFilter {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+  
+  .countryButton {
+    border: none;
+    padding: 1rem;
+    height: 3.5rem;
+    width: 48%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: var(--compBg);
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+    color: black;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+  
+  .countryButton.active {
+    background-color: var(--activeBg);
+  }

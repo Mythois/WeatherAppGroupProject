@@ -8,7 +8,7 @@ const cityCountries: { [key: string]: string } = {
     Helsinki: 'Finland',
     Berlin: 'Germany',
     Paris: 'France',
-    London: 'United Kingdom',
+    London: 'UK',
   };
   
 export default cityCountries;

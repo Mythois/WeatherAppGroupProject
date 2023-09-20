@@ -1,9 +1,13 @@
 # project_1 - Weather App
-
-## Oppbygning
 Appen vår er en enkel værapp, som viser været for gjeldende dag og ukesvarsel for noen store byer i Norge samt enkelte hovedstader i Europa.
 
-Hvor finner vi hva i appen vår??
+## Oppbygning
+Appen er strukturert slik at de ulike delene nettsiden er bygdt opp av finnes i sin egen mappe i felles mapper med lignende ellementer, altså
+* De ulike sidene sidene ligger sammlet under "pages"
+* De ulike komponentene de forskjellige sidene er byget opp av ligger under "components" 
+* De ulike verktøyene som er brukt for hjelp i de forskjellige delene ligger under "utils"
+
+Selve appen er i "weatherApp/App.tsx" 
 
 ## Funksjonelle krav
 Brukeren skal få presentert en og en ressurs om gangen, men enkel mulighet til å bla seg frem og tilbake, og med mulighet til å hoppe til en spesifikk ressurs (f.eks. ved å velge i en liste).
@@ -37,11 +41,8 @@ Bruker HTML Web storage api (både localstorage og sessionstorage), alternativt 
 Bruker React Router
 * Vi bruker React Router for å sende bruker mellom ulike pages i applikasjonen, slik som "Home" og "Favourites" i navbaren, og for å sende bruker til en side som viser flere detaljer og langtidsvarsel for byen ved å trykke på navnet til byen i "Home".
 
-Løsningen har responsivt design
-* .......................
-
-Hvilke typer skjermer løsningenen er tilpasset for, og bruken av media queries
-* stuff
+Løsningen har responsivt design. Hvilke typer skjermer løsningenen er tilpasset for, og bruken av media queries
+* Vi bruker media queries for å tilpasse sidens utseende til ulike skjermstørrelser. Når skjermen er vanlig desktop størrelse vil navigasjonsbaren ha titelen på venstre side og lenker for å navigere til Home screen og til favoritter på høyre side.  For mobilskjermer vil derimot Home og Favourites bli flyttet inn i en hamburgermeny, mens titelen til nettsiden er sentrert.
 
 
 ## Testing
@@ -53,9 +54,10 @@ Hvilke typer skjermer løsningenen er tilpasset for, og bruken av media queries
 
 ## Videre arbeid
 - Utforming av flere tester
-- Somthing somthing about design
-- Bugs
-    Favorittmarkeringer har for øyeblikket en visuell bug, som gjør at markeringen forsvinner eller flytter seg når man bruker søkefunksjonen. Dette er dog bare visuelt, slik at det ikke påvirker bruken av applikasjonen i stor grad.
+- For videreutviklingen av designet tenker vi blant annet på å gi de ulike datapunktene (min/max temperaturene for eksempel) andre farger. Vi vurdere også å gjøre bakgrunnsfargen for siden og/eller dynamisk, slik at den tilpasser seg/ reflekterer været til byen brukeren har valgt ut.
+
+Fikse bugs:
+* Favorittmarkeringer har for øyeblikket en visuell bug, som gjør at markeringen forsvinner eller flytter seg når man bruker søkefunksjonen. Dette er dog bare visuelt, slik at det ikke påvirker bruken av applikasjonen i stor grad.
 
 ## Bygging og kjøring av prosjektet
 For bygging og kjøring av prosjekte se README.md filen inne i "weatherApp" folderen

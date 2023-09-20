@@ -27,7 +27,6 @@ function CityWeek( {cityName}: CityWeekProps) {
       <Day cityName={cityName} day={4} />      
       <Day cityName={cityName} day={5} />      
       <Day cityName={cityName} day={6} />      
-      <Day cityName={cityName} day={7} />      
     
     </div>
   )

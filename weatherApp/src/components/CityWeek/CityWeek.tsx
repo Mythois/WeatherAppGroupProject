@@ -1,7 +1,6 @@
-import React from 'react'
 import './CityWeek.css'
 import Day from '../Day/Day';
-import weatherHook from '../../api_hooks/weatherHook';
+import weatherHook from '../../utils/api_hooks/weatherHook';
 import cityCoordinates from '../../coordinates/cityCoordinates';
 
 

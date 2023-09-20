@@ -6,6 +6,7 @@ Appen er strukturert slik at de ulike delene nettsiden er bygdt opp av finnes i 
 * De ulike sidene sidene ligger sammlet under "pages"
 * De ulike komponentene de forskjellige sidene er byget opp av ligger under "components" 
 * De ulike verktøyene som er brukt for hjelp i de forskjellige delene ligger under "utils"
+* Iconer ligger under "assets"
 
 Selve appen er i "weatherApp/App.tsx" 
 
@@ -55,6 +56,7 @@ Løsningen har responsivt design. Hvilke typer skjermer løsningenen er tilpasse
 ## Videre arbeid
 - Utforming av flere tester
 - For videreutviklingen av designet tenker vi blant annet på å gi de ulike datapunktene (min/max temperaturene for eksempel) andre farger. Vi vurdere også å gjøre bakgrunnsfargen for siden og/eller dynamisk, slik at den tilpasser seg/ reflekterer været til byen brukeren har valgt ut.
+- Legge til tab icon
 
 Fikse bugs:
 * Favorittmarkeringer har for øyeblikket en visuell bug, som gjør at markeringen forsvinner eller flytter seg når man bruker søkefunksjonen. Dette er dog bare visuelt, slik at det ikke påvirker bruken av applikasjonen i stor grad.

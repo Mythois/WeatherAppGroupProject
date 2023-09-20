@@ -2,12 +2,11 @@
 // This is the CityListElement component. It displays the city name, weather icon, and temperature for a city. 
 // Users can also favorite the city. 
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './CityListElement.css';
 import getWeatherIcon from '../../utils/getWeatherIcon';
 import { Link } from 'react-router-dom';
-
-import weatherHook from '../../api_hooks/weatherHook';
+import weatherHook from '../../utils/api_hooks/weatherHook';
 import cityCoordinates from '../../coordinates/cityCoordinates';
 
 

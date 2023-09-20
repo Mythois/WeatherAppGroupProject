@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/Home" element={<Home/>}/>
-        <Route path="/Favourites" element={<Favorites/>}/>
+        <Route path="/Favorites" element={<Favorites/>}/>
         <Route path="/city/:cityName" element={<CityDetailsWrapper/>}/>
       </Routes>
     </Fragment>

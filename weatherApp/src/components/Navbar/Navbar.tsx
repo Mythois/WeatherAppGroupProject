@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className='logoContainer'><h2><a href="/">WebDevWeather</a></h2></div>
       <ul className={menuOpen ? "open" : ""}>
         <li className="navigationElement"><a href="/Home">Home</a></li>
-        <li className="navigationElement"><a href="/Favourites">Favourites</a></li>
+        <li className="navigationElement"><a href="/Favorites">Favourites</a></li>
       </ul>
     </nav>
   );

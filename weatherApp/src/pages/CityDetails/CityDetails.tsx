@@ -53,7 +53,7 @@ function CityDetails( { cityName }: CityDetailsProps) {
           cloudCoverage={cloudCoverage} 
           cityPersipitation={cityPersipitation} />
 
-        <CityWeek />
+        <CityWeek cityName={cityName} />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import { Route, Routes, useParams } from 'react-router-dom'

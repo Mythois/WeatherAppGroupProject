@@ -1,13 +1,21 @@
 .cityHeader {
     background-color: var(--compBg);
     border-radius: 20px;
-    width: 90%;
-    height: 20%;
-    padding: 1rem;
+    padding: 5%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .cityHeader img {
     width: 5rem;
+}
+
+.cityHeader p {
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 500px) {
+    .cityHeader {
+        grid-template-columns: 1fr 1fr;
+    }
 }

@@ -1,7 +1,7 @@
 import './CityWeek.css'
 import Day from '../Day/Day';
 import weatherHook from '../../utils/api_hooks/weatherHook';
-import cityCoordinates from '../../coordinates/cityCoordinates';
+import cityCoordinates from '../../utils/coordinates/cityCoordinates';
 
 
 interface CityWeekProps {

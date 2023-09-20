@@ -3,9 +3,7 @@ import './CityDetails.css';
 import CityHeader from '../../components/CityHeader/CityHeader';
 import CityWeek from '../../components/CityWeek/CityWeek';
 import cityCoordinates from '../../coordinates/cityCoordinates';
-
-
-import weatherHook from '../../api_hooks/weatherHook';
+import weatherHook from '../../utils/api_hooks/weatherHook';
 
 interface CityDetailsProps {
   cityName: string;

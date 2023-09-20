@@ -14,10 +14,10 @@ function App() {
     <Fragment>
       <Navbar/>
       <Routes>
-        <Route path="/" element={<Home/>}/>
         <Route path="/Home" element={<Home/>}/>
         <Route path="/Favorites" element={<Favorites/>}/>
         <Route path="/city/:cityName" element={<CityDetailsWrapper/>}/>
+        <Route path="/" element={<Home/>}/>
       </Routes>
     </Fragment>
   ) 

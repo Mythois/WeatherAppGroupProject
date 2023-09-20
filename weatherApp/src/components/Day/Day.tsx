@@ -1,8 +1,6 @@
-import React from 'react'
 import getWeatherIcon from '../../utils/getWeatherIcon';
-import weatherHook from '../../api_hooks/weatherHook';
+import weatherHook from '../../utils/api_hooks/weatherHook';
 import cityCoordinates from '../../coordinates/cityCoordinates';
-
 import './Day.css'
 
 interface DayProps {

@@ -2,7 +2,7 @@
 import './CityDetails.css';
 import CityHeader from '../../components/CityHeader/CityHeader';
 import CityWeek from '../../components/CityWeek/CityWeek';
-import cityCoordinates from '../../coordinates/cityCoordinates';
+import cityCoordinates from '../../utils/coordinates/cityCoordinates';
 import weatherHook from '../../utils/api_hooks/weatherHook';
 
 interface CityDetailsProps {

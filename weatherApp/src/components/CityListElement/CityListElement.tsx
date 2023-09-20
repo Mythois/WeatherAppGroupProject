@@ -7,7 +7,7 @@ import './CityListElement.css';
 import getWeatherIcon from '../../utils/getWeatherIcon';
 import { Link } from 'react-router-dom';
 import weatherHook from '../../utils/api_hooks/weatherHook';
-import cityCoordinates from '../../coordinates/cityCoordinates';
+import cityCoordinates from '../../utils/coordinates/cityCoordinates';
 
 
 

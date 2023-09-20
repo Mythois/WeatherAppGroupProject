@@ -1,6 +1,6 @@
 import getWeatherIcon from '../../utils/getWeatherIcon';
 import weatherHook from '../../utils/api_hooks/weatherHook';
-import cityCoordinates from '../../coordinates/cityCoordinates';
+import cityCoordinates from '../../utils/coordinates/cityCoordinates';
 import './Day.css'
 
 interface DayProps {

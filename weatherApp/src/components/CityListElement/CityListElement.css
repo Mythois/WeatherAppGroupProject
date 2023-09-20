@@ -43,6 +43,10 @@
     color: black;
 }
 
+.cityLink:hover {
+    color: rgb(125, 124, 124);
+}
+
 @media screen and (max-width: 600px) {
     .cityListElement {
         grid-template-columns: 1fr 0.5fr 0.8fr 1fr 0.5fr;

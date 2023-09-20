@@ -47,11 +47,9 @@ Løsningen har responsivt design. Hvilke typer skjermer løsningenen er tilpasse
 
 
 ## Testing
-- Bruk av Vitest
-- Vise snapshot test
-- Testing av egne komponent (teste på prop og state, brukerinteraksjon).
-- Bruk av mocking så testene ikke henter data
-- Applikasjonen skal være testet på mainstream weblesere og mobile enheter (selvsagt kun basert på det gruppa har tilgjengelig av enheter)
+Vi bruker noen enkle tester for å sjekke at de riktige værikonene blir hentet frem avhengig av værvarslet. 
+I tillegg har vi forberedt tester med mocked data.
+Applikasjonen ble testet i flere ulike browsere (Safari, Firefox og Chrome) og vi brukte browserverktøyene for å sjekke ut hvordan applikasjonen fungerer på mobilskjermer. 
 
 ## Videre arbeid
 - Utforming av flere tester

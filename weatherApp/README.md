@@ -33,7 +33,7 @@ Når du har laget alle endringene dine og ønsker å lagre de i grenen du jobber
 7. Run "git checkout name-of-branch" to switch to another branch
 8. Once you are in the desired branch make sure that you are in the "weatherApp" folder. For example if you created the folder "project_1" folder in step 1, you may want to run "cd weatherApp" to enter the correct folder.
 9. Run "npm install" and wait for the process to finish.
-10. You can now "npm run dev" to start a live server that should update everytime you make changes to the codebase.
+10. You can now run "npm run dev" to start a live server that should update everytime you make changes to the codebase.
 
 Step 8 may  have to and step 9 and 10 certainly  have to be repeated everytime you start your IDE. 
 
@@ -42,6 +42,6 @@ Once you have made changes that you want to save in the branch you are currently
 1. Run "git status" to see all changed files
 2. Assuming you want to add all changed files / all changes to the branch you are currently working in, run the command "git add --all".
 5. Check that you have added all changes by running: git status
-4. Commit the changes you have made by running: git commit -m"your-commit message header" -m"your-detailed-commit-message"
+4. Commit the changes you have made by running: git commit -m"[#issueNumber]your-commit message header" -m"your-detailed-commit-message"
 5. Push the commited changes to the branch: git push
 

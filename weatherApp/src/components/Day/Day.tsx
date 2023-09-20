@@ -61,7 +61,7 @@ function Day( { cityName, day }: DayProps) {
     <div className='day'>
         <p>{dayOfWeek}</p>
         <img src={getWeatherIcon(cityPersipitation, cloudCoverage)} width={40} height={40} alt='weather icon'/>
-        <p>{cityPersipitation}mm</p>
+        <p>{cityPersipitation} mm</p>
         <p>{cityTempMax} / {cityTempMin}℃</p>
     </div>
     <span className='line'></span>

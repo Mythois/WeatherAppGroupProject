@@ -1,6 +1,29 @@
 .home {
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
+    width: 60%;
+    margin: auto;
+    padding: 1%;
 }
 
+@media screen and (max-width: 1420px) {
+    .home {
+        width: 70%; 
+    }
+}
+@media screen and (max-width: 1280px) {
+    .home {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 1080px) {
+    .home {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .home {
+        width: 98%;
+    }
+}

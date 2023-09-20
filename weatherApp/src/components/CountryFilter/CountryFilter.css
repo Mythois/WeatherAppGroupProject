@@ -35,7 +35,7 @@
 
   
   /* Media query for screens with a maximum width of 768px */
-  @media (max-width: 840px) {
+  @media (max-width: 940px) {
     .countryFilter {
         display: flex;
         flex-wrap: wrap;

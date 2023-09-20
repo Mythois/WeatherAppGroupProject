@@ -1,6 +1,6 @@
 .cityListElement{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr;
     background-color: var(--compBg);
     margin-bottom: 1rem;
     border-radius: 20px;
@@ -41,4 +41,15 @@
 .cityLink {
     text-decoration: none;
     color: black;
+}
+
+@media screen and (max-width: 600px) {
+    .cityListElement {
+        grid-template-columns: 1fr 0.5fr 0.8fr 1fr 0.5fr;
+    }
+}
+@media screen and (max-width: 450px) {
+    .cityListElement {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }

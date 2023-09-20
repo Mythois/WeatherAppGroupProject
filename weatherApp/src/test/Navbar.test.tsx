@@ -6,6 +6,5 @@ import Navbar from "../components/Navbar/Navbar";
 it("should have the title WebDevWeather", () =>{
     render(<Navbar/>);
     const message = screen.queryByText(/WebDevWeather/i);
-    console.log(message)
     expect(message).toBeVisible()
 })

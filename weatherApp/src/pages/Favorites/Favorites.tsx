@@ -7,7 +7,7 @@ function Favorites() {
 
   return (
     <div className='favorite'>
-      <CityList filter={filter} showFavoritesOnly={true} />
+      <CityList selectedCountry={''} filter={filter} showFavoritesOnly={true} />
     </div>
   );
 }

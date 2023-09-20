@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+
 import './CityDetails.css';
 import CityHeader from '../../components/CityHeader/CityHeader';
 import CityWeek from '../../components/CityWeek/CityWeek';
 import cityCoordinates from '../../coordinates/cityCoordinates';
 
-import getWeatherIcon from '../../utils/getWeatherIcon';
+
 import weatherHook from '../../api_hooks/weatherHook';
 
 interface CityDetailsProps {

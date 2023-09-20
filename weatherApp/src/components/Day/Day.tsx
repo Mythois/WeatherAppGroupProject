@@ -22,7 +22,7 @@ function Day( { cityName, day }: DayProps) {
     const hourIndex = day * 24;
     
     // Get the date string from the weather data
-    let dateString = cityWeatherData?.hourly?.time[hourIndex];
+    const dateString = cityWeatherData?.hourly?.time[hourIndex];
     const date = new Date(dateString);
     
     // Get the day of the week

@@ -1,5 +1,5 @@
 import './Search.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 interface SearchBarProps {
   onFilter: (filter: string) => void;

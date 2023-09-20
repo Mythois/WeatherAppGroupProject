@@ -4,6 +4,7 @@
     flex-direction: column;
     width: 60%;
     margin: auto;
+    padding: 1%;
 }
 
 @media screen and (max-width: 1420px) {
@@ -19,5 +20,10 @@
 @media screen and (max-width: 1080px) {
     .home {
         width: 90%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .home {
+        width: 98%;
     }
 }

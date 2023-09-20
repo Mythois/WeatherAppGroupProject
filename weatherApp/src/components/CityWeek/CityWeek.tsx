@@ -1,40 +1,34 @@
 import React from 'react'
 import './CityWeek.css'
+import Day from '../Day/Day';
+import weatherHook from '../../api_hooks/weatherHook';
+import cityCoordinates from '../../coordinates/cityCoordinates';
 
-// TODO: find out what props you need and add them to the interface
-// it may be easy to use the same props as in CityListElement for each day
-// may make sense to make a day component
 
-function CityWeek() {
+interface CityWeekProps {
+  cityName: string;
+}
+
+function CityWeek( {cityName}: CityWeekProps) {
+
+  
+  if (!weatherHook(cityCoordinates[cityName])) {
+    // Handle the case where data is still loading or unavailable
+    return <p>Loading weekly weather data...</p>;
+  }
+
+
   return (
     <div className='cityWeek'>
 
-      <div className='day'>
-        <div>Monday</div>
-        <div>⛈</div>
-        <div>5mm</div>
-        <div>10℃</div>
-      </div>
-      <span className='line'></span>
-      
-      <div className='day'>
-        <div>Tuesday</div>
-        <div>⛈</div>
-        <div>5mm</div>
-        <div>10℃</div>
-      </div>
-      <span className='line'></span>
-      
-      <div className='day'>
-        <div>Wednesday</div>
-        <div>⛈</div>
-        <div>5mm</div>
-        <div>10℃</div>
-      </div>
-      <span className='line'></span>
-      
-      
-      
+      <Day cityName={cityName} day={1} />      
+      <Day cityName={cityName} day={2} />      
+      <Day cityName={cityName} day={3} />      
+      <Day cityName={cityName} day={4} />      
+      <Day cityName={cityName} day={5} />      
+      <Day cityName={cityName} day={6} />      
+      <Day cityName={cityName} day={7} />      
+    
     </div>
   )
 }

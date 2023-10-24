@@ -40,6 +40,7 @@ We use some simple tests to ensure that the correct weather icons are displayed 
 - Develop additional tests.
 - For further design development, we are considering giving different data points (e.g., min/max temperatures) different colors. We are also considering making the background color of the page dynamic, reflecting the weather of the selected city.
 - Add a tab icon.
+- Regulate when which weather icons are shown, and the thresholds for these. Also fix the maths for calculating different aspects, such as average rain and cloud coverage, and min / max temp.
 
 Fix bugs:
 * Currently, there is a visual bug with favorite markings that causes them to disappear or shift when using the search function. However, this is only a visual issue and does not significantly affect the functionality of the application.

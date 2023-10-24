@@ -18,6 +18,9 @@
   color: black;
   margin-right: 0.5rem;
   margin-left: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .countryButton.active,
@@ -56,6 +59,13 @@
     transition: background-color 0.2s ease-in-out;
     color: black;
     margin: 0.25rem;
+    font-size: 0.8rem;
+  }
+
+  .countryButton.active {
+    background-color: var(--activeBg);
+    border: 1px solid var(--compBg);
+    outline: none;
     font-size: 0.9rem;
   }
 }

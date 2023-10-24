@@ -1,17 +1,17 @@
-import './Search.css';
-import React, { useState } from 'react';
+import './Search.css'
+import React, { useState } from 'react'
 
 interface SearchBarProps {
-  onFilter: (filter: string) => void;
+  onFilter: (filter: string) => void
 }
 
 export const Search: React.FC<SearchBarProps> = ({ onFilter }) => {
-  const [filter, setFilter] = useState("");   
+  const [filter, setFilter] = useState('')
 
   const handleFilterChange = (value: string) => {
-    setFilter(value);
-    onFilter(value);
-  };
+    setFilter(value)
+    onFilter(value)
+  }
 
   return (
     <div className="homeSearch">
@@ -19,8 +19,10 @@ export const Search: React.FC<SearchBarProps> = ({ onFilter }) => {
         type="text"
         placeholder="Search..."
         value={filter}
-        onChange={(e) => { handleFilterChange(e.target.value) }}
+        onChange={(e) => {
+          handleFilterChange(e.target.value)
+        }}
       />
     </div>
-  );
-};
+  )
+}

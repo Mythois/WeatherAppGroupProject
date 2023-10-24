@@ -1,10 +1,10 @@
-import React from 'react';
-import './CountryFilter.css';
+import React from 'react'
+import './CountryFilter.css'
 
 interface CountryFilterProps {
-  countries: string[];
-  selectedCountry: string | null;
-  onSelectCountry: (country: string | null) => void;
+  countries: string[]
+  selectedCountry: string | null
+  onSelectCountry: (country: string | null) => void
 }
 
 const CountryFilter: React.FC<CountryFilterProps> = ({ countries, selectedCountry, onSelectCountry }) => {
@@ -26,7 +26,7 @@ const CountryFilter: React.FC<CountryFilterProps> = ({ countries, selectedCountr
         </button>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default CountryFilter;
+export default CountryFilter

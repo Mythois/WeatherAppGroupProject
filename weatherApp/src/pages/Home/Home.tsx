@@ -19,11 +19,11 @@ function Home() {
 
   // Save selected country filter to sessionStorage whenever it changes
   useEffect(() => {
-    // Sjekk om selectedCountry er null eller "All"
+    // Check if selectedCountry is null or "All" and store it accordingly
     if (selectedCountry !== null && selectedCountry !== 'All') {
       sessionStorage.setItem('selectedCountry', selectedCountry)
     } else {
-      sessionStorage.removeItem('selectedCountry') // Fjern lagret verdi for "All"
+      sessionStorage.removeItem('selectedCountry') // Remove the stored value for "All"
     }
   }, [selectedCountry])
 
@@ -31,12 +31,15 @@ function Home() {
 
   return (
     <div className="home">
+      {/* Display the Search component to allow filtering by city name */}
       <Search onFilter={(value) => setFilter(value)} />
+      {/* Display the CountryFilter component for country-based filtering */}
       <CountryFilter
         countries={countries}
         selectedCountry={selectedCountry}
         onSelectCountry={(country) => setSelectedCountry(country)}
       />
+      {/* Display the CityList component to list cities based on filter and selected country */}
       <CityList filter={filter} showFavoritesOnly={false} selectedCountry={selectedCountry} />
     </div>
   )

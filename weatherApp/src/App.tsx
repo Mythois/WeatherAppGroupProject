@@ -9,6 +9,7 @@ import CityDetails from './pages/CityDetails/CityDetails'
 function App() {
   return (
     <Fragment>
+      {/* Display the Navbar component for navigation */}
       <Navbar />
       <Routes>
         <Route path="/Home" element={<Home />} />
@@ -21,9 +22,9 @@ function App() {
 }
 
 function CityDetailsWrapper() {
-  const { cityName = '' } = useParams()
+  const { cityName = '' } = useParams() // Extract the cityName from the route parameters
 
-  return <CityDetails cityName={cityName} />
+  return <CityDetails cityName={cityName} /> // Render the CityDetails component with the extracted cityName
 }
 
 export default App

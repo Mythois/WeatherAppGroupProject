@@ -11,7 +11,7 @@ interface DayProps {
 function Day({ cityName, day }: DayProps) {
   const cityWeatherData = weatherHook(cityCoordinates[cityName])
 
-  // Find the lowest / highest temp
+  // Find the lowest and highest temperature for the specified day
   let maxTemp = cityWeatherData?.hourly?.temperature_2m[0]
   let minTemp = cityWeatherData?.hourly?.temperature_2m[0]
 
@@ -21,11 +21,12 @@ function Day({ cityName, day }: DayProps) {
   const dateString = cityWeatherData?.hourly?.time[hourIndex]
   const date = new Date(dateString)
 
-  // Get the day of the week
+  // Get the day of the week for the specified day
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
   const dayIndex = date.getDay()
   const dayOfWeek = daysOfWeek[dayIndex]
 
+  // Calculate the maximum and minimum temperatures for the day
   for (let i = hourIndex; i < hourIndex + 24; i++) {
     if (cityWeatherData?.hourly?.temperature_2m[i] < minTemp) {
       minTemp = cityWeatherData?.hourly?.temperature_2m[i]
@@ -38,7 +39,7 @@ function Day({ cityName, day }: DayProps) {
   const cityTempMax = maxTemp
   const cityTempMin = minTemp
 
-  // Finds the average of rain/clouds
+  // Calculate the average precipitation and cloud coverage for the day
   let sumOfRain = 0
   let sumOfClouds = 0
 

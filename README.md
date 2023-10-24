@@ -1,63 +1,52 @@
-# project_1 - Weather App
-Appen vår er en enkel værapp, som viser været for gjeldende dag og ukesvarsel for noen store byer i Norge samt enkelte hovedstader i Europa.
+# Project 1 - Weather App
+Our app is a simple weather application that displays the current day's weather and a week-long forecast for some major cities in Norway, as well as a few capital cities in Europe. The app offers up-to-date weather information for the current day, which includes details like temperature, precipitation, and wind, as well as icons about conditions such as sunny, cloudy, or rainy. Users can check the immediate weather conditions in their chosen locations. In addition to the current day's weather, the app also offers a seven-day forecast. This forecast provides users with an overview of expected weather conditions for the week, helping them plan activities and make informed decisions. The user is also able to choose favorites, and look at those favorite markings explicitly.
 
-## Oppbygning
-Appen er strukturert slik at de ulike delene nettsiden er bygdt opp av finnes i sin egen mappe i felles mapper med lignende ellementer, altså
-* De ulike sidene sidene ligger sammlet under "pages"
-* De ulike komponentene de forskjellige sidene er byget opp av ligger under "components" 
-* De ulike verktøyene som er brukt for hjelp i de forskjellige delene ligger under "utils"
-* Iconer ligger under "assets"
+## Building and Running the Project
+To get started, run the following commands in the following order:
 
-Selve appen er i "weatherApp/App.tsx" 
+| Command                                                                       | Description                                        |
+| ----------------------------------------------------------------------------- | -------------------------------------------------- |
+| `git clone https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-22/project_1.git ` | clone project                                      |
+| `cd weatherApp`                                                               | navigate into root folder                          |
+| `npm install`                                                                 | install dependencies                               |
+| `npm run dev`                                                                 | run project in browser                             |
 
-## Funksjonelle krav
-Brukeren skal få presentert en og en ressurs om gangen, men enkel mulighet til å bla seg frem og tilbake, og med mulighet til å hoppe til en spesifikk ressurs (f.eks. ved å velge i en liste).
-* Vi har valgt å la brukeren navigere seg mellom ulike ressurser (værmelding for byer) gjennom en fullstendig liste på startsiden for applikasjonen, hvor bruker kan trykke seg inn på hver enkelt ressurs for mer informasjon.
+Or manually:
 
-En bruker skal kunne gjøre et valg (ala filtrering eller sortering) som påvirker utvalget av det som presenteres og hvordan det presenteres. Disse valgene skal huskes selv om siden reloades.
-* Vi har valgt å gi bruker muligheten til å filtrere hvilke byer man kan se værmelding for ut ifra hvilket land de befinner seg i, denne filtreringen fungerer ved å trykke seg inn på hvert enkelt land nedenfor søkebaren i "Home". Valgene blir lagret ved bruk av sessionStorage. Bruker har også muligheten til å søke seg frem til byer de ønsker å se værmeldingen for, søket oppdateres mens bruker skriver input i søkebaren.
+1. Create a folder on your machine in which you want the project to live, for example the folder "project_1"
+2. Go to the GitLab repository https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-22/project_1 and select "Clone" and copy the URL pertaining to "Clone with HTTPS".
+3. Open the folder created in step 1 in a terminal and enter "git clone the-url-from-clone-with-https"
+4. Wait until the cloning process is finished
+5. Run "git pull" in the terminal just to be sure that you got everything from the repository
+6. Run "git branch -a" to see all branches
+7. Run "git checkout name-of-branch" to switch to another branch
+8. Once you are in the desired branch make sure that you are in the "GoCart" folder. For example, if you created the folder "project_2" folder in step 1, you may want to run "cd GoCart" to enter the correct folder.
+9. Run "npm install" and wait for the process to finish.
+10. You can now run "npm run dev" to start a live server that should update everytime you make changes to the codebase.
 
-En bruker skal kunne velge favoritter ved å for eksempel klikke på en stjerne eller et hjerte. Valg skal huskes selv om nettleser avsluttes og startes igjen.
-* Vi har valgt å gi bruker muligheten til å stjernemarkere (markere som favoritt) byene de ønsker å enklere finne værmelding for. Disse lagres i "Favorites", slik at bruker enkelt kan få tilgang til de favorittmarkerte byene. Lagringen fungerer ved bruk av localStorage, slik at bruker finner igjen informasjonen selv om man avslutter og gjenoppstarter nettleseren.
+Step 8 may  have to and step 9 and 10 certainly  have to be repeated everytime you start your IDE. 
 
-Siden skal ha responsivt design og være utformet med tanke på både vanlig desktop skjerm og mobil enhet (tilpasse seg mindre skjerm som kan være både i høyde og breddeformat).
-* Vi har gjort noe ulike valg når det kommer til responsivt design. Ved bruk av pc vil bruker klikke seg direkte inn i "Home" og "Favourites" i en responsiv navbar ut ifra skjermstørrelse. Filtrering av land vil vise seg som en linje med land nedenfor søkebaren.
-* Gjeldende mobile enheter vil bruker ha muligheten til å trykke seg inn på en nedtrekksbar som viser valgene "Home" og "Favourites". Filtrering av land vil nå befinne seg på to linjer med land nedenfor søkebaren. Slik er det mer brukervennlig å bruke applikasjonen på mobil.
+## Prettier
 
-Listen av byer vil fungere som en scrollbar uansett enhet.
-Siden skal ha en estetisk og ryddig utforming (dette er subjektivt, men vi er ute etter at dere skal ha lagt ned litt arbeid i stiling av siden). 
-* Vi har tatt en rekke valg når det gjelder styling, for å gjøre applikasjonen mest mulig lesbar og ryddig. Ulike elementer har tilnærmet lik styling på alle sidene bruker kan navigere seg mellom, for et ryddig og enkelt design.
+Prettier is recomended to format on save. To activate follow these steps:
 
-## Tekniske krav
-Viser bruk av React state og props
-* Vi har aktivt brukt props i komponentene for å hente inn data mellom disse, samt React state for å holde på nødvendig informasjon i komponentene.
+```
+- Install Prettier extension
+- Open settings for your VS Code
+- Click on the formatting section of the Text Editor tab and enable Format on Save Mode.
+- Highlight your code and right-click. Select Format Document. Once you click on Format Document, a dialog box will tell you to configure your code formatter. This is to set your default code formatter. Click on the configure button.
+- After you click on configure, select Prettier as the default formatter.
+```
 
-Løsningen henter data/informasjon fra et REST API og bruker TanStack Query
-* Vi har valgt å hente data fra https://open-meteo.com/
+Source for guided step by step tutorial: https://www.educative.io/answers/how-to-set-up-prettier-and-automatic-formatting-on-vs-code
 
-Bruker HTML Web storage api (både localstorage og sessionstorage), alternativt kan dere også bruke IndexedDB API’et.
-* Vi har valgt å lagre filtrering av byer vel valg av land ved bruk av sessionstorage, slik at bruker enkelt kan holde tråden selv om siden oppdaterer seg.
-* Favorittmarkeringer lagre i localstorage og presenteres i "Favorites", slik at bruker enkelt kan finne tilbake til valgte byer på samme enhet.
+Or use shift + alt + F to format
 
-Bruker React Router
-* Vi bruker React Router for å sende bruker mellom ulike pages i applikasjonen, slik som "Home" og "Favourites" i navbaren, og for å sende bruker til en side som viser flere detaljer og langtidsvarsel for byen ved å trykke på navnet til byen i "Home".
+## Structure
+The app is structured so that the various components that make up the website are organized into their own folders within shared folders with similar elements, as follows:
+* The different pages are grouped under "pages"
+* The various components that the different pages are built from are located under "components"
+* The different tools used to assist in various parts are located under "utils"
+* Icons are located under "assets"
 
-Løsningen har responsivt design. Hvilke typer skjermer løsningenen er tilpasset for, og bruken av media queries
-* Vi bruker media queries for å tilpasse sidens utseende til ulike skjermstørrelser. Når skjermen er vanlig desktop størrelse vil navigasjonsbaren ha titelen på venstre side og lenker for å navigere til Home screen og til favoritter på høyre side.  For mobilskjermer vil derimot Home og Favourites bli flyttet inn i en hamburgermeny, mens titelen til nettsiden er sentrert.
-
-
-## Testing
-Vi bruker noen enkle tester for å sjekke at de riktige værikonene blir hentet frem avhengig av værvarslet. 
-I tillegg har vi forberedt tester med mocked data.
-Applikasjonen ble testet i flere ulike browsere (Safari, Firefox og Chrome) og vi brukte browserverktøyene for å sjekke ut hvordan applikasjonen fungerer på mobilskjermer. 
-
-## Videre arbeid
-- Utforming av flere tester
-- For videreutviklingen av designet tenker vi blant annet på å gi de ulike datapunktene (min/max temperaturene for eksempel) andre farger. Vi vurdere også å gjøre bakgrunnsfargen for siden og/eller dynamisk, slik at den tilpasser seg/ reflekterer været til byen brukeren har valgt ut.
-- Legge til tab icon
-
-Fikse bugs:
-* Favorittmarkeringer har for øyeblikket en visuell bug, som gjør at markeringen forsvinner eller flytter seg når man bruker søkefunksjonen. Dette er dog bare visuelt, slik at det ikke påvirker bruken av applikasjonen i stor grad.
-
-## Bygging og kjøring av prosjektet
-For bygging og kjøring av prosjekte se README.md filen inne i "weatherApp" folderen
+The app itself is in "weatherApp/App.tsx."

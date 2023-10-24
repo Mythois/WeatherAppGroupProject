@@ -1,5 +1,4 @@
 import './CityHeader.css'
-
 import getWeatherIcon from '../../utils/getWeatherIcon'
 
 type CityHeaderProps = {
@@ -12,6 +11,7 @@ type CityHeaderProps = {
 
 function CityHeader({ cityName, cityTempMax, cityTempMin, cityPersipitation, cloudCoverage }: CityHeaderProps) {
   return (
+    // Render the CityHeader component with the following elements
     <div className="cityHeader">
       <h3>{cityName}</h3>
       <img src={getWeatherIcon(cityPersipitation, cloudCoverage)} alt="icon" />

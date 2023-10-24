@@ -7,6 +7,7 @@ function Favorites() {
 
   return (
     <div className="favorite">
+      {/* Display the CityList component to show favorite cities */}
       <CityList selectedCountry={''} filter={filter} showFavoritesOnly={true} />
     </div>
   )

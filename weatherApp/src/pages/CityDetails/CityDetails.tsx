@@ -11,7 +11,7 @@ interface CityDetailsProps {
 function CityDetails({ cityName }: CityDetailsProps) {
   const cityWeatherData = weatherHook(cityCoordinates[cityName])
 
-  // Find the lowest / highest temp
+  // Find the lowest and highest temperatures for the day
   let maxTemp = cityWeatherData?.hourly?.temperature_2m[0]
   let minTemp = cityWeatherData?.hourly?.temperature_2m[0]
 
@@ -27,7 +27,7 @@ function CityDetails({ cityName }: CityDetailsProps) {
   const cityTempMax = maxTemp
   const cityTempMin = minTemp
 
-  // Finds the average of rain/clouds
+  // Calculate the average precipitation and cloud coverage for the day
   let sumOfRain = 0
   let sumOfClouds = 0
   for (let i = 0; i < 24; i++) {
@@ -40,6 +40,7 @@ function CityDetails({ cityName }: CityDetailsProps) {
 
   return (
     <div className="cityDetails">
+      {/* Display the CityHeader component with weather details */}
       <CityHeader
         cityTempMax={cityTempMax}
         cityTempMin={cityTempMin}
@@ -47,7 +48,7 @@ function CityDetails({ cityName }: CityDetailsProps) {
         cloudCoverage={cloudCoverage}
         cityPersipitation={cityPersipitation}
       />
-
+      {/* Display the CityWeek component for the weekly weather forecast */}
       <CityWeek cityName={cityName} />
     </div>
   )

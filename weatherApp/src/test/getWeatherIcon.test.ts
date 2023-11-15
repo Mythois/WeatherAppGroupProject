@@ -8,11 +8,11 @@ import cloud from '../assets/cloud.svg'
 import sunCloud from '../assets/sunCloud.svg'
 
 test('gets correct weather Icon for sunCloud', () => {
-  expect(getWeatherIcon(0.5, 20)).toBe(sunCloud)
+  expect(getWeatherIcon(0.4, 60)).toBe(sunCloud)
 })
 
 test('gets correct weather Icon for cloud', () => {
-  expect(getWeatherIcon(0, 70)).toBe(cloud)
+  expect(getWeatherIcon(0, 90)).toBe(cloud)
 })
 
 test('gets correct weather Icon for sun', () => {

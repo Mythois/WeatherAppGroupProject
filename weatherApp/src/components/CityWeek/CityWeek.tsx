@@ -1,6 +1,6 @@
 import './CityWeek.css'
 import Day from '../Day/Day'
-import weatherHook from '../../utils/api_hooks/weatherHook'
+import useWeatherHook from '../../utils/api_hooks/useWeatherHook'
 import cityCoordinates from '../../utils/coordinates/cityCoordinates'
 
 interface CityWeekProps {
@@ -8,7 +8,7 @@ interface CityWeekProps {
 }
 
 function CityWeek({ cityName }: CityWeekProps) {
-  if (!weatherHook(cityCoordinates[cityName])) {
+  if (!useWeatherHook(cityCoordinates[cityName])) {
     // Handle the case where data is still loading or unavailable
     return <p>Loading weekly weather data...</p>
   }

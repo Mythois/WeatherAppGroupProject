@@ -1,5 +1,5 @@
 import getWeatherIcon from '../../utils/getWeatherIcon'
-import weatherHook from '../../utils/api_hooks/weatherHook'
+import useWeatherHook from '../../utils/api_hooks/useWeatherHook'
 import cityCoordinates from '../../utils/coordinates/cityCoordinates'
 import './Day.css'
 
@@ -9,7 +9,7 @@ interface DayProps {
 }
 
 function Day({ cityName, day }: DayProps) {
-  const cityWeatherData = weatherHook(cityCoordinates[cityName])
+  const cityWeatherData = useWeatherHook(cityCoordinates[cityName])
 
   // Find the lowest and highest temperature for the specified day
   let maxTemp = cityWeatherData?.hourly?.temperature_2m[0]

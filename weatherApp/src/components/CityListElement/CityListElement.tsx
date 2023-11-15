@@ -5,7 +5,7 @@ import { useState } from 'react'
 import './CityListElement.css'
 import getWeatherIcon from '../../utils/getWeatherIcon'
 import { Link } from 'react-router-dom'
-import weatherHook from '../../utils/api_hooks/weatherHook'
+import useWeatherHook from '../../utils/api_hooks/useWeatherHook'
 import cityCoordinates from '../../utils/coordinates/cityCoordinates'
 
 interface CityListElementProps {
@@ -14,7 +14,7 @@ interface CityListElementProps {
 
 function CityListElement({ cityName }: CityListElementProps) {
   // Fetch weather data for the specified city using a custom hook
-  const cityWeatherData = weatherHook(cityCoordinates[cityName])
+  const cityWeatherData = useWeatherHook(cityCoordinates[cityName])
   // Initialize the 'isFavorite' state based on the user's local storage
   const [isFavorite, setIsFavorite] = useState(localStorage.getItem(cityName) === 'true')
 

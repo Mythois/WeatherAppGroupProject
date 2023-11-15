@@ -3,7 +3,7 @@ import { rest } from 'msw'
 export const handlers = [
   rest.get(
     'https://api.open-meteo.com/v1/forecast?latitude=59.9127&longitude=10.7461&hourly=temperature_2m,rain,cloudcover',
-    (request, response, context) => {
+    (_request, response, context) => {
       return response(
         context.status(200),
         context.json([

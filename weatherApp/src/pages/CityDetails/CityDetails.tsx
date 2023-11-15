@@ -2,14 +2,14 @@ import './CityDetails.css'
 import CityHeader from '../../components/CityHeader/CityHeader'
 import CityWeek from '../../components/CityWeek/CityWeek'
 import cityCoordinates from '../../utils/coordinates/cityCoordinates'
-import weatherHook from '../../utils/api_hooks/weatherHook'
+import useWeatherHook from '../../utils/api_hooks/useWeatherHook'
 
 interface CityDetailsProps {
   cityName: string
 }
 
 function CityDetails({ cityName }: CityDetailsProps) {
-  const cityWeatherData = weatherHook(cityCoordinates[cityName])
+  const cityWeatherData = useWeatherHook(cityCoordinates[cityName])
 
   // Find the lowest and highest temperatures for the day
   let maxTemp = cityWeatherData?.hourly?.temperature_2m[0]

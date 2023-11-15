@@ -9,11 +9,15 @@ interface DayProps {
 }
 
 function Day({ cityName, day }: DayProps) {
-  const cityWeatherData = useWeatherHook(cityCoordinates[cityName])
+  const { data: cityWeatherData, isLoading } = useWeatherHook(cityCoordinates[cityName])
 
-  // Find the lowest and highest temperature for the specified day
-  let maxTemp = cityWeatherData?.hourly?.temperature_2m[0]
-  let minTemp = cityWeatherData?.hourly?.temperature_2m[0]
+  if (isLoading) {
+    return <div>Loading weather data...</div>
+  }
+
+  if (!cityWeatherData.hourly || !Array.isArray(cityWeatherData.hourly.temperature_2m)) {
+    return <div>Invalid weather data format for {cityName}</div>
+  }
 
   const hourIndex = day * 24
 
@@ -26,18 +30,13 @@ function Day({ cityName, day }: DayProps) {
   const dayIndex = date.getDay()
   const dayOfWeek = daysOfWeek[dayIndex]
 
-  // Calculate the maximum and minimum temperatures for the day
-  for (let i = hourIndex; i < hourIndex + 24; i++) {
-    if (cityWeatherData?.hourly?.temperature_2m[i] < minTemp) {
-      minTemp = cityWeatherData?.hourly?.temperature_2m[i]
-    }
-    if (cityWeatherData?.hourly?.temperature_2m[i] > maxTemp) {
-      maxTemp = cityWeatherData?.hourly?.temperature_2m[i]
-    }
-  }
+  // Handle potential undefined values
+  const hourlyTemperature = cityWeatherData.hourly?.temperature_2m || []
+  const temperatures = hourlyTemperature.slice(0, 24)
 
-  const cityTempMax = maxTemp
-  const cityTempMin = minTemp
+  // Calculate the maximum and minimum temperatures for the city
+  const cityTempMax = Math.max(...temperatures)
+  const cityTempMin = Math.min(...temperatures)
 
   // Calculate the average precipitation and cloud coverage for the day
   let sumOfRain = 0
@@ -48,15 +47,15 @@ function Day({ cityName, day }: DayProps) {
     sumOfClouds += cityWeatherData?.hourly?.cloudcover[i]
   }
 
-  const cityPersipitation = parseFloat((sumOfRain / 24).toFixed(2))
+  const cityPrecipitation = parseFloat((sumOfRain / 24).toFixed(2))
   const cloudCoverage = parseFloat((sumOfClouds / 24).toFixed(2))
 
   return (
     <>
       <div className="day">
         <p>{dayOfWeek}</p>
-        <img src={getWeatherIcon(cityPersipitation, cloudCoverage)} width={40} height={40} alt="weather icon" />
-        <p>{cityPersipitation} mm</p>
+        <img src={getWeatherIcon(cityPrecipitation, cloudCoverage)} width={40} height={40} alt="weather icon" />
+        <p>{cityPrecipitation} mm</p>
         <p>
           {cityTempMax} / {cityTempMin}℃
         </p>

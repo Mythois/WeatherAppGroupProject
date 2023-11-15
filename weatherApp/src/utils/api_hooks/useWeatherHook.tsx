@@ -18,16 +18,27 @@ const useWeatherHook = (location: string) => {
   // This can be changed if we want more weather data
   const url = `https://api.open-meteo.com/v1/forecast?${location}&hourly=temperature_2m,rain,cloudcover`
 
-  const { data } = useQuery({
+  const { data, isError, isLoading } = useQuery({
     queryKey: [location],
     queryFn: async () => {
-      const res = await fetch(url) // The response to our query
-      console.log('response' + res)
-      const data = await res.json() // The response to our query in json format
-      return data
+      try {
+        const res = await fetch(url)
+        if (!res.ok) {
+          throw new Error('Network response was not ok')
+        }
+        const data = await res.json()
+        return data
+      } catch (error) {
+        throw new Error('Error fetching weather data')
+      }
     },
   })
-  return data
+
+  if (isError) {
+    throw new Error('Error fetching weather data')
+  }
+
+  return { data, isLoading }
 }
 
 export default useWeatherHook

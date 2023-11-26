@@ -5,17 +5,17 @@ type CityHeaderProps = {
   cityName: string
   cityTempMax: number
   cityTempMin: number
-  cityPersipitation: number
+  cityPrecipitation: number
   cloudCoverage: number
 }
 
-function CityHeader({ cityName, cityTempMax, cityTempMin, cityPersipitation, cloudCoverage }: CityHeaderProps) {
+function CityHeader({ cityName, cityTempMax, cityTempMin, cityPrecipitation, cloudCoverage }: CityHeaderProps) {
   return (
     // Render the CityHeader component with the following elements
     <div className="cityHeader">
       <h3>{cityName}</h3>
-      <img src={getWeatherIcon(cityPersipitation, cloudCoverage)} alt="icon" />
-      <p>{cityPersipitation} mm</p>
+      <img src={getWeatherIcon(cityPrecipitation, cloudCoverage)} alt="icon" />
+      <p>{cityPrecipitation} mm</p>
       <p>
         {cityTempMax} / {cityTempMin}℃
       </p>

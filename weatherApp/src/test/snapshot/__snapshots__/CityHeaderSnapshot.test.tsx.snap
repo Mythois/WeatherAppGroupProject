@@ -10,7 +10,7 @@ exports[`CityHeader snapshot test > src/test/snapshot/__snapshots__/CityHeaderSn
     </h3>
     <img
       alt="icon"
-      src="/src/assets/rain.svg"
+      src="/project1/src/assets/rain.svg"
     />
     <p>
       10

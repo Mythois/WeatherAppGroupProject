@@ -36,7 +36,7 @@ exports[`Navbar component > matches snapshot > src/test/snapshot/__snapshots__/N
       >
         <a
           class="linkstyle"
-          href="/Home"
+          href="/project1/Home"
         >
           Home
         </a>
@@ -46,7 +46,7 @@ exports[`Navbar component > matches snapshot > src/test/snapshot/__snapshots__/N
       >
         <a
           class="linkstyle"
-          href="/Favorites"
+          href="/project1/Favorites"
         >
           Favourites
         </a>

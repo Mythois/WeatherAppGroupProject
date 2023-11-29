@@ -1,0 +1,57 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Navbar component > matches snapshot 1`] = `
+<DocumentFragment>
+  <nav>
+    <div
+      class="menu "
+    >
+      <div
+        class="bar1"
+      />
+      <div
+        class="bar2"
+      />
+      <div
+        class="bar3"
+      />
+    </div>
+    <div
+      class="logoContainer"
+    >
+      <h2>
+        <a
+          class="linkstyle"
+          href="/"
+        >
+          WebDevWeather
+        </a>
+      </h2>
+    </div>
+    <ul
+      class=""
+    >
+      <li
+        class="navigationElement"
+      >
+        <a
+          class="linkstyle"
+          href="/Home"
+        >
+          Home
+        </a>
+      </li>
+      <li
+        class="navigationElement"
+      >
+        <a
+          class="linkstyle"
+          href="/Favorites"
+        >
+          Favourites
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;

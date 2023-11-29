@@ -43,7 +43,7 @@ Source for guided step by step tutorial: https://www.educative.io/answers/how-to
 Or use shift + alt + F to format
 
 ## Linting
-- Navigate to the right folder, either backend or frontend.
+- Navigate to the right folder, being project_1/weatherApp
 - Open your terminal and run `npm run lint` 
 
 ## Structure

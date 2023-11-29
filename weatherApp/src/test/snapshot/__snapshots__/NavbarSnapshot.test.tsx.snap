@@ -22,7 +22,7 @@ exports[`Navbar component > matches snapshot > src/test/snapshot/__snapshots__/N
       <h2>
         <a
           class="linkstyle"
-          href="/"
+          href="/project1/"
         >
           WebDevWeather
         </a>

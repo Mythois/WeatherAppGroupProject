@@ -17,7 +17,7 @@ const Navbar = () => {
       </div>
       <div className="logoContainer">
         <h2>
-          <a href="/" className="linkstyle">
+          <a href={import.meta.env.BASE_URL + "/"} className="linkstyle">
             WebDevWeather
           </a>
         </h2>

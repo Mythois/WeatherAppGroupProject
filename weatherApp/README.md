@@ -36,11 +36,19 @@ The solution has a responsive design. It specifies the types of screens the solu
 ## Testing
 We use some simple tests to ensure that the correct weather icons are displayed depending on the weather forecast. Additionally, we have prepared tests with mocked data. The application was tested in several different browsers (Safari, Firefox, and Chrome), and we used browser tools to check how the application performs on mobile screens.
 
+**Component tests:**
+- The component tests are located under **test** in the src folder. You can run the component tests by running: `npm run test` from project_1/weatherApp
+- The component tests utilize vitest, a testing framework for React components. These tests focus on the functionalities of individual components, ensuring they perform as expected.
+- To check test coverage run `npm run coverage` from project_1/weatherApp
+
+**Snapshot tests:**
+----WRITE SOMETHING HERE----
+
 ## Future Work
-- Develop additional tests.
+- Develop additional tests. Currently we have not taken the time to test every component comprehensively, but since they are used in several aspects of the app in different ways we feel like the testing is enough for now. If we were to work further with this project we would develop more detailed tests covering all the components and pages.
 - For further design development, we are considering giving different data points (e.g., min/max temperatures) different colors. We are also considering making the background color of the page dynamic, reflecting the weather of the selected city.
-- Add a tab icon.
-- Regulate when which weather icons are shown, and the thresholds for these. Also fix the maths for calculating different aspects, such as average rain and cloud coverage, and min / max temp.
+- Add a tab icon to show the user more information about which app they are using.
+- Regulate when which weather icons are shown, and the thresholds for these.
 
 Fix bugs:
-* Currently, there is a visual bug with favorite markings that causes them to disappear or shift when using the search function. However, this is only a visual issue and does not significantly affect the functionality of the application.
+* Currently, there is a minor visual bug with favorite markings that causes them to disappear or shift when using the search function. However, this is only a visual issue and does not significantly affect the functionality and usage of the application.

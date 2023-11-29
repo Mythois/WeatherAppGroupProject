@@ -1,5 +1,5 @@
 # Project 1 - Weather App
-Our app is a simple weather application that displays the current day's weather and a week-long forecast for some major cities in Norway, as well as a few capital cities in Europe. The app offers up-to-date weather information for the current day, which includes details like temperature, precipitation, and wind, as well as icons about conditions such as sunny, cloudy, or rainy. Users can check the immediate weather conditions in their chosen locations. In addition to the current day's weather, the app also offers a seven-day forecast. This forecast provides users with an overview of expected weather conditions for the week, helping them plan activities and make informed decisions. The user is also able to choose favorites, and look at those favorite markings explicitly.
+**WebDevWeather** is an application developed as part of the group project in *IT2810 Webutvikling* at NTNU fall 2023. Our app is a simple weather application that displays the current day's weather and a week-long forecast for some major cities in Norway, as well as a few capital cities in Europe. The app offers up-to-date weather information for the current day, which includes details like temperature, precipitation, and wind, as well as icons about conditions such as sunny, cloudy, or rainy. Users can check the immediate weather conditions in their chosen locations. In addition to the current day's weather, the app also offers a seven-day forecast. This forecast provides users with an overview of expected weather conditions for the week, helping them plan activities and make informed decisions. The user is also able to choose favorites, and look at those favorite markings explicitly.
 
 ## Building and Running the Project
 To get started, run the following commands in the following order:
@@ -24,7 +24,7 @@ Or manually:
 9. Run "npm install" and wait for the process to finish.
 10. You can now run "npm run dev" to start a live server that should update everytime you make changes to the codebase.
 
-Step 8 may  have to and step 9 and 10 certainly  have to be repeated everytime you start your IDE. 
+Step 8 may have to and step 9 and 10 certainly have to be repeated everytime you start your IDE. 
 
 ## Prettier
 
@@ -41,6 +41,10 @@ Prettier is recomended to format on save. To activate follow these steps:
 Source for guided step by step tutorial: https://www.educative.io/answers/how-to-set-up-prettier-and-automatic-formatting-on-vs-code
 
 Or use shift + alt + F to format
+
+## Linting
+- Navigate to the right folder, either backend or frontend.
+- Open your terminal and run `npm run lint` 
 
 ## Structure
 The app is structured so that the various components that make up the website are organized into their own folders within shared folders with similar elements, as follows:

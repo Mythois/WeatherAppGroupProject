@@ -20,7 +20,7 @@ Or manually:
 5. Run "git pull" in the terminal just to be sure that you got everything from the repository
 6. Run "git branch -a" to see all branches
 7. Run "git checkout name-of-branch" to switch to another branch
-8. Once you are in the desired branch make sure that you are in the "GoCart" folder. For example, if you created the folder "project_2" folder in step 1, you may want to run "cd GoCart" to enter the correct folder.
+8. Once you are in the desired branch make sure that you are in the "weatherApp" folder. For example, if you created the folder "project_1" folder in step 1, you may want to run "cd weatherApp" to enter the correct folder.
 9. Run "npm install" and wait for the process to finish.
 10. You can now run "npm run dev" to start a live server that should update everytime you make changes to the codebase.
 

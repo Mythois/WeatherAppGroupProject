@@ -24,12 +24,12 @@ const Navbar = () => {
       </div>
       <ul className={menuOpen ? 'open' : ''}>
         <li className="navigationElement">
-          <a href="/Home" className="linkstyle">
+          <a href={import.meta.env.BASE_URL + "/Home"} className="linkstyle">
             Home
           </a>
         </li>
         <li className="navigationElement">
-          <a href="/Favorites" className="linkstyle">
+          <a href={import.meta.env.BASE_URL + "/Favorites"} className="linkstyle">
             Favourites
           </a>
         </li>

@@ -1,25 +1,24 @@
-
 input {
-    border: none;
-    padding: 1rem;
-    height: 3.5rem;
-    width: 100%;
-    border-radius: 20px;
-    box-sizing: border-box;
-    background-color: var(--compBg);
-    color: black;
-    outline: none;
+  border: none;
+  padding: 1rem;
+  height: 3.5rem;
+  width: 100%;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background-color: var(--compBg);
+  color: black;
+  outline: none;
 }
 
 .homeSearch {
-    margin: 1rem 1rem 0 1rem;
+  margin: 1rem 1rem 0 1rem;
 }
 
 input::placeholder {
-    color: #7d7c7c; 
-  }
-  
+  color: #7d7c7c;
+}
+
 /* Hide the placeholder when the input is in focus */
 input:focus::placeholder {
-    color: transparent;
-  }
+  color: transparent;
+}

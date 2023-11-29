@@ -1,68 +1,66 @@
-import getWeatherIcon from '../../utils/getWeatherIcon';
-import weatherHook from '../../utils/api_hooks/weatherHook';
-import cityCoordinates from '../../utils/coordinates/cityCoordinates';
+import getWeatherIcon from '../../utils/getWeatherIcon'
+import useWeatherHook from '../../utils/api_hooks/useWeatherHook'
+import cityCoordinates from '../../utils/coordinates/cityCoordinates'
 import './Day.css'
 
 interface DayProps {
-    cityName: string;
-    day: number; // 1-6 days in the future
+  cityName: string
+  day: number // 1-6 days in the future
 }
 
-function Day( { cityName, day }: DayProps) {
-    
-    const cityWeatherData= weatherHook(cityCoordinates[cityName]);
-    
-    // Find the lowest / highest temp
-    let maxTemp = cityWeatherData?.hourly?.temperature_2m[0];
-    let minTemp = cityWeatherData?.hourly?.temperature_2m[0];
-    
+function Day({ cityName, day }: DayProps) {
+  const { data: cityWeatherData, isLoading } = useWeatherHook(cityCoordinates[cityName])
 
-    const hourIndex = day * 24;
-    
-    // Get the date string from the weather data
-    const dateString = cityWeatherData?.hourly?.time[hourIndex];
-    const date = new Date(dateString);
-    
-    // Get the day of the week
-    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const dayIndex = date.getDay();
-    const dayOfWeek = daysOfWeek[dayIndex];
-    
+  if (isLoading) {
+    return <div>Loading weather data...</div>
+  }
 
-    for (let i = hourIndex; i < hourIndex+24; i++) {
-        if (cityWeatherData?.hourly?.temperature_2m[i] < minTemp) {
-        minTemp = cityWeatherData?.hourly?.temperature_2m[i];
-        }
-        if (cityWeatherData?.hourly?.temperature_2m[i] > maxTemp) {
-        maxTemp = cityWeatherData?.hourly?.temperature_2m[i];
-        }
-    }
+  if (!cityWeatherData.hourly || !Array.isArray(cityWeatherData.hourly.temperature_2m)) {
+    return <div>Invalid weather data format for {cityName}</div>
+  }
 
-    const cityTempMax = maxTemp;
-    const cityTempMin = minTemp;
+  const hourIndex = day * 24
 
-    // Finds the average of rain/clouds
-    let sumOfRain = 0;
-    let sumOfClouds = 0;
-   
-    for (let i = hourIndex; i < hourIndex+24; i++) {
-        sumOfRain += cityWeatherData?.hourly?.rain[i];
-        sumOfClouds += cityWeatherData?.hourly?.cloudcover[i];
-    }
+  // Get the date string from the weather data
+  const dateString = cityWeatherData?.hourly?.time[hourIndex]
+  const date = new Date(dateString)
 
-    const cityPersipitation = parseFloat((sumOfRain/24).toFixed(2));
-    const cloudCoverage = parseFloat((sumOfClouds/24).toFixed(2));
+  // Get the day of the week for the specified day
+  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+  const dayIndex = date.getDay()
+  const dayOfWeek = daysOfWeek[dayIndex]
 
+  // Handle potential undefined values
+  const hourlyTemperature = cityWeatherData.hourly?.temperature_2m || []
+  const temperatures = hourlyTemperature.slice(0, 24)
+
+  // Calculate the maximum and minimum temperatures for the city
+  const cityTempMax = Math.max(...temperatures)
+  const cityTempMin = Math.min(...temperatures)
+
+  // Calculate the average precipitation and cloud coverage for the day
+  let sumOfRain = 0
+  let sumOfClouds = 0
+
+  for (let i = hourIndex; i < hourIndex + 24; i++) {
+    sumOfRain += cityWeatherData?.hourly?.rain[i]
+    sumOfClouds += cityWeatherData?.hourly?.cloudcover[i]
+  }
+
+  const cityPrecipitation = parseFloat((sumOfRain / 24).toFixed(2))
+  const cloudCoverage = parseFloat((sumOfClouds / 24).toFixed(2))
 
   return (
     <>
-    <div className='day'>
+      <div className="day">
         <p>{dayOfWeek}</p>
-        <img src={getWeatherIcon(cityPersipitation, cloudCoverage)} width={40} height={40} alt='weather icon'/>
-        <p>{cityPersipitation} mm</p>
-        <p>{cityTempMax} / {cityTempMin}℃</p>
-    </div>
-    <span className='line'></span>
+        <img src={getWeatherIcon(cityPrecipitation, cloudCoverage)} width={40} height={40} alt="weather icon" />
+        <p>{cityPrecipitation} mm</p>
+        <p>
+          {cityTempMax} / {cityTempMin}℃
+        </p>
+      </div>
+      <span className="line"></span>
     </>
   )
 }

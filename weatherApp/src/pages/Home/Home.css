@@ -1,29 +1,29 @@
 .home {
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin: auto;
-    padding: 1%;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  padding-top: 6rem;
 }
 
-@media screen and (max-width: 1420px) {
-    .home {
-        width: 70%; 
-    }
+@media screen and (max-width: 1560px) {
+  .home {
+    width: 70%;
+  }
 }
 @media screen and (max-width: 1280px) {
-    .home {
-        width: 80%;
-    }
+  .home {
+    width: 80%;
+  }
 }
 @media screen and (max-width: 1080px) {
-    .home {
-        width: 90%;
-    }
+  .home {
+    width: 90%;
+  }
 }
 @media screen and (max-width: 600px) {
-    .home {
-        width: 98%;
-    }
+  .home {
+    width: 98%;
+  }
 }

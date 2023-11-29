@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import './Navbar.css';
+import { useState } from 'react'
+import './Navbar.css'
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+    setMenuOpen(!menuOpen) // Toggle the menu's open/closed state
+  }
 
   return (
     <nav>
@@ -15,13 +15,27 @@ const Navbar = () => {
         <div className="bar2"></div>
         <div className="bar3"></div>
       </div>
-      <div className='logoContainer'><h2><a href="/" className='linkstyle'>WebDevWeather</a></h2></div>
-      <ul className={menuOpen ? "open" : ""}>
-        <li className="navigationElement"><a href="/Home" className='linkstyle'>Home</a></li>
-        <li className="navigationElement"><a href="/Favorites" className='linkstyle'>Favourites</a></li>
+      <div className="logoContainer">
+        <h2>
+          <a href="/" className="linkstyle">
+            WebDevWeather
+          </a>
+        </h2>
+      </div>
+      <ul className={menuOpen ? 'open' : ''}>
+        <li className="navigationElement">
+          <a href="/Home" className="linkstyle">
+            Home
+          </a>
+        </li>
+        <li className="navigationElement">
+          <a href="/Favorites" className="linkstyle">
+            Favourites
+          </a>
+        </li>
       </ul>
     </nav>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

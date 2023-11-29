@@ -13,11 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --pageBg: #D9D9D9;
-  --compBg: #FFFFFF;
+  --pageBg: #d9d9d9;
+  --compBg: #ffffff;
   --textColor: black;
 }
-
 
 a {
   font-weight: 500;
@@ -73,4 +72,3 @@ button:focus-visible {
     background-color: #9be9e9;
   }
 }
-

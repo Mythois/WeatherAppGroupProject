@@ -1,47 +1,74 @@
-# Hvordan starte - How to get started
-## Hvordan starte /hvordan bygge
-1. Lag en mappe på maskinen din hvor du ønsker at prosjektet skal bo, for eksempel en "project_1" mappe
-2. Gå til GitLab repositoriet https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-22/project_1 og velg "Clone" og lagre URL-en under "Clone with HTTPS".
-3. Åpne mappen du lagde i steg 1 i terminalen og skriv inn "git clone {url_fra_clone_with_HTTPS}" 
-4. Vent til clonings prosessen er fullført
-5. Kjør "git pull" i terminalen for å være sikker på at du fikk med alt fra repositoret
-6. Kjør "git branch -a" for å se alle grenene 
-7. Kjør "git checkout {navn_på_gren} for å endre til en annen gren 
-8. Når du er i den ønskede grenen pass på at du er inne i "weatherApp" folderen. For eksempel hvis du lagde mappen "project_1" i steg 1 vil du nå kjøre "cd weatherApp" for gå inn i riktig folder.
-9. Kjør "npm install" og vent til at prosessen fullfører
-10. Du kan nå kjøre "npm run dev" for å starte en live server som blir oppdatert hver gang du gjør endringer i databasen. 
+## Functional Requirements
 
-Steg 9 og 10 må gjentas hver gang du starter din IDE og kan hende det også gjelder for steg 8.
+The user should be presented with one resource at a time, with easy navigation options to move forward and backward, and the ability to jump to a specific resource (for example by selecting from a list).
 
-## Hvordan lagre endringer i branch
-Når du har laget alle endringene dine og ønsker å lagre de i grenen du jobber på, gjør følgende:
-1. Kjør "git status" for å se alle endrede filer
-2. Hvis man antar at du ønsker å legge til alle filene som er endret til grenen du jobber på, kjør "git add --all"
-3. Sjekk om du har lagt til alle endringene dine ved å kjøre "git status" igjen
-4. Del endringene din eved å kjøre "git commit"
-5. Dytt endringene til hoved branchen ved å kjøre "git push"
+- We have chosen to allow the user to navigate between different resources (weather forecasts for cities) through a comprehensive list on the application's homepage, where the user can click on each resource for more information.
 
----
+A user should be able to make a choice (e.g., filtering or sorting) that affects the selection and presentation of content. These choices should be remembered even if the page is reloaded.
 
-## How to get started
-1. Create a folder on your machine in which you want the project to live, for example the folder "project_1"
-2. Go to the GitLab repository https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-22/project_1 and select "Clone" and copy the URL pertaining to "Clone with HTTPS".
-3. Open the folder created in step 1 in a terminal and enter "git clone the-url-from-clone-with-https"
-4. Wait until the cloning process is finished
-5. Run "git pull" in the terminal just to be sure that you got everything from the repository
-6. Run "git branch -a" to see all branches
-7. Run "git checkout name-of-branch" to switch to another branch
-8. Once you are in the desired branch make sure that you are in the "weatherApp" folder. For example if you created the folder "project_1" folder in step 1, you may want to run "cd weatherApp" to enter the correct folder.
-9. Run "npm install" and wait for the process to finish.
-10. You can now run "npm run dev" to start a live server that should update everytime you make changes to the codebase.
+- We have chosen to give the user the ability to filter which cities' weather forecasts they can view based on the country they are in. This filtering is done by clicking on each country below the search bar on the "Home" page. The choices are stored using sessionStorage. The user also has the option to search for cities they want to see the weather forecast for, and the search updates as the user types input into the search bar.
 
-Step 8 may  have to and step 9 and 10 certainly  have to be repeated everytime you start your IDE. 
+A user should be able to select favorites by, for example, clicking on a star or heart icon. These choices should be remembered even if the browser is closed and restarted.
 
-## How to save changes in a branch
-Once you have made changes that you want to save in the branch you are currently working in, do the following:
-1. Run "git status" to see all changed files
-2. Assuming you want to add all changed files / all changes to the branch you are currently working in, run the command "git add --all".
-5. Check that you have added all changes by running: git status
-4. Commit the changes you have made by running: git commit -m"[#issueNumber]your-commit message header" -m"your-detailed-commit-message"
-5. Push the commited changes to the branch: git push
+- We have chosen to allow the user to mark cities as favorites. These favorites are stored in "Favorites," making it easy for the user to access the marked cities. The storage is done using localStorage, so the user can find the information even if they close and restart the browser.
 
+The page should have a responsive design and be designed for both regular desktop screens and mobile devices (adapting to smaller screens in both portrait and landscape orientations).
+
+- We have made various design choices for responsiveness. When using a PC, the user will directly click into "Home" and "Favorites" in a responsive navbar based on screen size. Filtering by country will be displayed as a line of countries below the search bar.
+- On current mobile devices, the user will have the option to click on a dropdown menu displaying the options "Home" and "Favorites." Filtering by country will now appear on two lines below the search bar, making the application more user-friendly on mobile.
+
+The list of cities will function as a scrollbar on all devices. The page should have an aesthetic and organized layout (this is subjective, but we expect that you have put some effort into styling the page).
+
+- We have made several styling choices to make the application as readable and organized as possible. Various elements have a consistent style on all pages the user can navigate between, ensuring a clean and simple design.
+
+## Technical Requirements
+
+Demonstrates the use of React state and props.
+
+- We actively use props in components to pass data between them, and React state to store necessary information in the components.
+
+The solution fetches data/information from a REST API and uses the TanStack Query.
+
+- We have chosen to fetch data from https://open-meteo.com/.
+
+Uses HTML Web Storage API (both localstorage and sessionstorage), or optionally, the IndexedDB API.
+
+- We have opted to store country filtering choices using sessionstorage so that the user can maintain their selections even if the page refreshes.
+- Favorite markings are stored in localstorage and presented in "Favorites," allowing the user to easily find their chosen cities on the same device.
+
+Utilizes React Router
+
+- We use React Router to navigate the user between different pages in the application, such as "Home" and "Favorites" in the navbar, and to send the user to a page displaying more details and a long-term forecast for a city by clicking on the city's name in "Home."
+
+The solution has a responsive design. It specifies the types of screens the solution is tailored for and the use of media queries.
+
+- We use media queries to adapt the appearance of the page to different screen sizes. For a regular desktop-sized screen, the navigation bar will have the title on the left and links to navigate to the Home screen and favorites on the right. For mobile screens, Home and Favorites will be moved into a hamburger menu, while the website's title is centered.
+
+## Testing
+
+We use some simple tests to ensure that the correct weather icons are displayed depending on the weather forecast. Furthermore, we have prepared tests with mocked data. The application was tested in several different browsers (Safari, Firefox, and Chrome), and we used browser tools to check how the application performs on mobile screens.
+
+Additionally, we have used snapshot tests, for all our components,to keep track of changes in our components.
+
+**Component tests:**
+
+- The component tests are located under **test** in the src folder. You can run the component tests by running: `npm run test` from project_1/weatherApp
+- The component tests utilize vitest, a testing framework for React components. These tests focus on the functionalities of individual components, ensuring they perform as expected.
+- To check test coverage run `npm run coverage` from project_1/weatherApp
+
+**Snapshot tests:**
+
+- The snapshot tests are located in the src/test/snapshot folder, while the snapshot files are located in the src/test/snapshot/_ snapshots _ folder.
+- The snapshot tests use vitest, just like the component tests.
+- You can run the snapshot tests via the command `npm run test`
+
+## Future Work
+
+- Develop additional tests. Currently we have not taken the time to test every component comprehensively, but since they are used in several aspects of the app in different ways we feel like the testing is enough for now. If we were to work further with this project we would develop more detailed tests covering all the components and pages.
+- For further design development, we are considering giving different data points (e.g., min/max temperatures) different colors. We are also considering making the background color of the page dynamic, reflecting the weather of the selected city.
+- Add a tab icon to show the user more information about which app they are using.
+- Regulate when which weather icons are shown, and the thresholds for these.
+
+Fix bugs:
+
+- Currently, there is a minor visual bug with favorite markings that causes them to disappear or shift when using the search function. However, this is only a visual issue and does not significantly affect the functionality and usage of the application.

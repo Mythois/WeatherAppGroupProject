@@ -1,59 +1,59 @@
-
-import './CityDetails.css';
-import CityHeader from '../../components/CityHeader/CityHeader';
-import CityWeek from '../../components/CityWeek/CityWeek';
-import cityCoordinates from '../../utils/coordinates/cityCoordinates';
-import weatherHook from '../../utils/api_hooks/weatherHook';
+import './CityDetails.css'
+import CityHeader from '../../components/CityHeader/CityHeader'
+import CityWeek from '../../components/CityWeek/CityWeek'
+import cityCoordinates from '../../utils/coordinates/cityCoordinates'
+import useWeatherHook from '../../utils/api_hooks/useWeatherHook'
 
 interface CityDetailsProps {
-  cityName: string;
+  cityName: string
 }
 
-function CityDetails( { cityName }: CityDetailsProps) {
+function CityDetails({ cityName }: CityDetailsProps) {
+  const { data: cityWeatherData, isLoading } = useWeatherHook(cityCoordinates[cityName])
 
-  const cityWeatherData= weatherHook(cityCoordinates[cityName]);
-
-  // Find the lowest / highest temp
-  let maxTemp = cityWeatherData?.hourly?.temperature_2m[0];
-  let minTemp = cityWeatherData?.hourly?.temperature_2m[0];
-
-  for (let i = 0; i < 24; i++) {
-    if (cityWeatherData?.hourly?.temperature_2m[i] < minTemp) {
-      minTemp = cityWeatherData?.hourly?.temperature_2m[i];
-    }
-    if (cityWeatherData?.hourly?.temperature_2m[i] > maxTemp) {
-      maxTemp = cityWeatherData?.hourly?.temperature_2m[i];
-    }
+  if (isLoading) {
+    // Handle the case where data is still loading or unavailable
+    return <div>Loading weather data...</div>
   }
 
-  const cityTempMax = maxTemp;
-  const cityTempMin = minTemp;
-
-  // Finds the average of rain/clouds
-  let sumOfRain = 0;
-  let sumOfClouds = 0;
-  for (let i = 0; i < 24; i++) {
-    sumOfRain += cityWeatherData?.hourly?.rain[i];
-    sumOfClouds += cityWeatherData?.hourly?.cloudcover[i];
+  if (!cityWeatherData.hourly || !Array.isArray(cityWeatherData.hourly.temperature_2m)) {
+    // Check if API-response has the correct structure
+    return <div>Invalid weather data format for {cityName}</div>
   }
 
-  const cityPersipitation = parseFloat((sumOfRain/24).toFixed(2));
-  const cloudCoverage = parseFloat((sumOfClouds/24).toFixed(2));
-  
-  
+  // Handle potential undefined values
+  const hourlyTemperature = cityWeatherData.hourly?.temperature_2m || []
+  const temperatures = hourlyTemperature.slice(0, 24)
+
+  // Calculate the maximum and minimum temperatures for the city
+  const cityTempMax = Math.max(...temperatures)
+  const cityTempMin = Math.min(...temperatures)
+
+  // Calculate the average precipitation and cloud coverage for the day
+  let sumOfRain = 0
+  let sumOfClouds = 0
+  for (let i = 0; i < 24; i++) {
+    sumOfRain += cityWeatherData?.hourly?.rain[i]
+    sumOfClouds += cityWeatherData?.hourly?.cloudcover[i]
+  }
+
+  const cityPersipitation = parseFloat((sumOfRain / 24).toFixed(2))
+  const cloudCoverage = parseFloat((sumOfClouds / 24).toFixed(2))
+
   return (
-    <div className='cityDetails'>
-
-        <CityHeader 
-          cityTempMax={cityTempMax} 
-          cityTempMin={cityTempMin} 
-          cityName={cityName} 
-          cloudCoverage={cloudCoverage} 
-          cityPersipitation={cityPersipitation} />
-
-        <CityWeek cityName={cityName} />
+    <div className="cityDetails">
+      {/* Display the CityHeader component with weather details */}
+      <CityHeader
+        cityTempMax={cityTempMax}
+        cityTempMin={cityTempMin}
+        cityName={cityName}
+        cloudCoverage={cloudCoverage}
+        cityPersipitation={cityPersipitation}
+      />
+      {/* Display the CityWeek component for the weekly weather forecast */}
+      <CityWeek cityName={cityName} />
     </div>
-  );
+  )
 }
 
-export default CityDetails;
+export default CityDetails

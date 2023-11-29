@@ -5,6 +5,7 @@ nav {
   color: white;
   background-color: var(--compBg);
   padding: 0 1rem 0 1rem;
+  position: fixed;
 }
 
 ul {

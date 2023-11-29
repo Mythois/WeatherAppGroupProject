@@ -11,5 +11,5 @@ test('CityHeader snapshot test', () => {
   };
 
   const { container } = render(<CityHeader {...props} />);
-  expect(container).toMatchSnapshot();
+  expect(container).toMatchSnapshot('src/test/snapshot/__snapshots__/CityHeaderSnapshot.test.tsx.snap');
 })

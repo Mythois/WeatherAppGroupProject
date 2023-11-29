@@ -48,7 +48,7 @@ function CityDetails({ cityName }: CityDetailsProps) {
         cityTempMin={cityTempMin}
         cityName={cityName}
         cloudCoverage={cloudCoverage}
-        cityPersipitation={cityPersipitation}
+        cityPrecipitation={cityPersipitation}
       />
       {/* Display the CityWeek component for the weekly weather forecast */}
       <CityWeek cityName={cityName} />

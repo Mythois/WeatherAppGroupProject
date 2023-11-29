@@ -48,7 +48,7 @@ The solution has a responsive design. It specifies the types of screens the solu
 
 We use some simple tests to ensure that the correct weather icons are displayed depending on the weather forecast. Furthermore, we have prepared tests with mocked data. The application was tested in several different browsers (Safari, Firefox, and Chrome), and we used browser tools to check how the application performs on mobile screens.
 
-Additionally, we have used snapshot tests to keep track of changes in our components.
+Additionally, we have used snapshot tests, for all our components,to keep track of changes in our components.
 
 **Component tests:**
 
@@ -59,7 +59,7 @@ Additionally, we have used snapshot tests to keep track of changes in our compon
 **Snapshot tests:**
 
 - The snapshot tests are located in the src/test/snapshot folder, while the snapshot files are located in the src/test/snapshot/_ snapshots _ folder.
-- The snapshot tests use vitest, jsut like the component tests.
+- The snapshot tests use vitest, just like the component tests.
 - You can run the snapshot tests via the command `npm run test`
 
 ## Future Work
